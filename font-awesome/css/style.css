@@ -1,0 +1,1071 @@
+ li {list-style: none;}
+/* ---------/ Topo da pagina /-------------*/
+ .contacto{
+     font-family: raleway sans-serif;
+     font-size: 14px;
+     color: #802011;
+     padding: 0 6px 0 6px;
+     margin-top: 2px;
+    }
+
+/* ----------/ Topo do cabeçalho /-----------*/
+ .topCabecalho{
+     border-bottom: #802011 1px solid;
+     padding-bottom: 2px;
+     margin: 0 5% 0 5%;
+    }
+ /*Email,Telefone*/
+     .contTelefone{
+         font: normal normal normal 14px/1.79em raleway,sans-serif;
+         border-left: #802011 1px solid;
+        }
+     .email{
+         font: normal normal normal 14px/1.79em raleway,sans-serif;
+         margin-left: -2%;
+        }
+ /*Carrinho de compra*/
+     .cardCarrinh {
+         display: flex;
+         float: right;
+         padding-left: 2%;
+         justify-content: flex-start;
+         align-items: center;
+         flex-wrap: nowrap;
+         border-left-width: thin;
+         position: relative;
+         white-space: nowrap;
+
+        }
+     .cardCarrinh_box{margin-top: -14px;padding: 0px 0 0 0;}
+     .dropdown-toggle::after{display: none;}
+     .dropdownCarrinho{
+         background-color: transparent;
+         border: none;
+         box-shadow: none;
+        }
+     .dropdown-menu {display: none; }
+     .cart-list {
+         transition-duration: 200ms;
+         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+         position: absolute;
+         top: calc(100% + -32px);
+         right: 98px;
+         display: block;
+         width: calc(100vw - 15px);
+         max-width: 300px;
+         background: #ffffff;
+         padding: 10px 20px 20px 20px;
+        }
+     .cart-list ul {
+         margin: 0;
+         padding: 0;
+         max-height: calc(100vh - 100px - 150px);
+         overflow: hidden;
+         overflow-y: auto;
+        }
+     ul.navbar-nav{
+     	 font: normal normal normal 14px/1.79em raleway,sans-serif;
+     	 padding: 0 10px;
+        }
+     a.{color: #652117;}
+     .cart-list ul li {
+         display: block;
+         border-bottom: 1px solid #bdbdbd;
+         text-align: center;
+        }
+     .cart-list > a {
+         border-radius: 4px;
+         display: inline-block;
+         padding: 10px 7px;
+         background: #f50300;
+         text-align: center;
+         color: #ffffff;
+         margin:7px 14px 0 -18px;
+         font: 700 18px/100% Arial, Helvetica, sans-serif;
+         border-color: #f50300;
+        }
+     .CarrinhImagem svg{margin: 7px 0 0px 0px;}
+     .cart-list .arrow-up {
+         position: absolute;
+         top: -11px;
+         right: 15px;
+         display: inline-block;
+         width: 26px;
+         height: 11px;
+         overflow: hidden;
+        }
+     .cart-list .arrow-up:before {
+         content: "";
+         transform: rotate(45deg);
+         transform-origin: 50% 50%;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+         position: relative;
+         top: 6px;
+         left: 4px;
+         display: block;
+         width: 17px;
+         height: 17px;
+         background: #ffffff;
+        }
+     .total .valorTotal {
+             font-weight: 700;
+    font-size: 20px;
+    text-align: right;
+    float: right;
+    width: 69%;
+    border: none;
+    margin: 0% 17.4% auto auto;
+    background-color: transparent;
+        }
+     .valorTotal {
+         display: inline-block;
+         color: #26201f;
+         white-space: nowrap;
+         font: 500 25px/62% "Oswald", Arial, Helvetica, sans-serif;
+         float: right;
+         margin: -8% -34px 0px 0px;
+        }
+     .totalCompra {
+         border-radius: 50%;
+         border: none;
+         position: absolute;
+         top: -10px;
+         right: 35px;
+         z-index: 1;
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         background-color: #f50300;
+         text-align: center;
+         font: 700 15px/ 20px Arial, Helvetica, sans-serif;
+         color: #ffffff;
+        }
+ /* ---
+ opacity: 0;
+ visibility: hidden;
+ --*/
+
+/* ---------------------------/ Cabeçalho /------------------------*/
+ .cabecalho{margin: 0 5% 0 5%;}
+  /*Logo*/
+     img.Logo{
+         width: 80px;
+         height: 80px;
+         margin: 0 0 0 -2%;
+         object-fit: contain;
+         object-position: center center;
+        }
+     div.LogoTipo{
+         left: 0%;
+         position: absolute;
+         top: 20px;
+         width: 80px;
+         height: 80px;
+        }
+ /* Titulo Logo */
+     .titleLogo{
+         left: 10%;
+         width: 143px;
+         position: absolute;
+         top: 32px;
+         line-height: 1.41em;
+         text-decoration:none;
+         color: #802011;
+        }
+     .titleLogo p span span a:hover,a:hover{color: #d49187;}
+     a.button.vibrate{transition: background-color 0.4s ease 0s;
+         -webkit-transition: background-color 1s;
+         -moz-transition: background-color 1s;
+         -o-transition: background-color 1s;
+         -ms-transition: background-color 1s;
+        }
+     a.button.vibrate:hover {
+         color: #f50300;
+         background-color: transparent;
+         text-decoration: none;
+         border: 1px solid #f50300;
+        }
+     .titleLogo p span span a{
+         color: #802011;
+         font: normal normal normal 22px/1.41em poppins-extralight,poppins,sans-serif;
+        }
+ /* Slogam*/
+     .slogam{
+         left: 10%;
+         width: 155px;
+         position: absolute;
+         pointer-events: none;
+         top: 61px;
+         text-align:left;
+         line-height:1.875em;
+         font: normal normal normal 15px/1.875em raleway,sans-serif;
+         color: #802011;
+        }
+
+/* -----------/ Slide Publicitario /-------------*/
+ .carousel-inner{margin: 6% 0 0 0px;}
+ .carousel-item img{
+     height: 500px;
+     width: 100%;
+    }
+ .carousel-caption {
+     position: absolute;
+     /* right: 15%; */
+     bottom: 20px;
+     left: 0%;
+     z-index: 10;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     color: #fff;
+     text-align: center;
+     background: #848c9396;
+     height: 50%;
+     top: 54%;
+     margin: auto;
+     width: 100%;
+    }
+ .titleSlide_public{
+     font: normal normal normal 72px/1.25em poppins-extralight,poppins,
+     sans-serif;
+     font-weight: bold;
+     color: #ec971d;
+     margin: auto;
+    }
+ .textSlide_public{
+     font: normal normal normal 20px/1.67em 'times new roman',times,serif;
+     color: #802011;
+     margin: auto;
+    }
+
+/* --------------/ Corpo /---------------------*/
+ /*Titulo das secções*/
+     .bordeL {
+         border-top: 6px double #802011;
+         width: 30%;
+         float: left;
+         margin: 2% 0 0 0;
+        }
+     .bordeR{
+         border-top: 6px double #802011;
+         width: 30%;
+         float: right;
+         margin: 2% 0 0 0;
+        }
+     .titleSlide{
+         font: normal normal normal 40px/1.35em Curlz MT,Gigi,French Script MT,sans-serif;
+         color: #ec971d;
+         font-weight: bold;
+        }
+     .textSlide {
+         font: normal normal normal 26px/1.75em Curlz MT,Blackadder ITC,'times new roman',times,serif;
+         color: #802011;
+        }
+     .box_titleSlideP{margin: 24px 0 0 0; text-align: center;}    
+  /*Preço Promocional*/
+     p.precoAnter {
+         margin-top: -8%;
+         text-decoration: 2px line-through;
+         font-size: 14px;
+        }
+ /*--- S.Hambúrguer em Destaque---*/
+     .imagProd{
+         height: 281px;
+         max-height: 100%;
+         max-width: 100%;
+        }
+     .details{
+         width: 100%;
+         height: 90px;
+         flex-direction: column;
+         align-items: center;
+        }
+     h2.nome {
+         font: normal normal normal 15px/1.875em raleway,sans-serif;
+         color: #802011;
+         font-weight: bold;
+         text-align: center;
+        }
+     .details p{
+         font-family: calibri;
+         font-weight: bold;
+         color:#6a6a74;
+         text-align: center;
+        }
+     .especifProdut{
+         --gallery_ribbonBackground: #ec971d;
+         font: normal normal normal 16px/1.75em "times new roman",times,serif;
+         background-color: rgb(236, 151, 29);
+         position: absolute;
+         box-sizing: content-box;
+         min-width: 4%;
+         margin-right: 3.6%;
+         padding: 5px 10px;
+         color: white;
+         text-align: center;
+         text-rendering: optimizeSpeed;
+         -webkit-font-smoothing: subpixel-antialiased;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+        }
+     .Vizualizar{
+         --gallery_quickViewTextColor: #000000;
+         --gallery_quickViewBackground: rgba(255, 255, 255, 0.75);
+         --gallery_quickViewTextFontStyle: normal normal normal 14px/1.75em "times new roman",times,serif;
+         font: normal normal normal 18px/1.75em "times new roman",times,serif;
+         text-decoration: ;
+         color: rgb(255 255 255 / 0%);
+         background-color: rgb(255 255 255 / 0%);
+         padding: 0;
+         border: none;
+         font: inherit;
+         position: absolute;
+         top: 63%;
+         width: 100%;
+         height: 50px;
+         line-height: 50px !important;
+         text-align: center;
+         cursor: pointer;
+        }
+     .nav-link .card .Vizualizar{transition: 0.5s ease-in-out;}
+     .nav-link .card:hover .Vizualizar{
+         font-weight: bold;
+         color: rgb(128 32 17 / 68%);
+         background-color: rgb(255 255 255 / 62%);
+         color: rgb(128, 32, 17);
+         background-color: rgba(255, 255, 255, 0.75);
+        }
+     .slider {
+         max-width: 94%;
+         margin: auto;
+        }
+     .nav-link {
+         display: block;
+         padding: 0;
+        }
+     .slick-slide {margin: 0px 20px;}      
+     .slick-slide {
+         transition: all ease-in-out .3s;
+         opacity: .2;
+        }
+     .slick-active {opacity: .5;}
+     .slick-current {opacity: 1;}
+ /*--- Secção de Destaque de Menus---*/ 
+     .boxContMeu_Dest {
+         width: 100%;
+         height: 100%;
+        }
+     .contMenu_Dest{
+         width: 92%;
+         height: 100%;
+         display: contents;
+         margin: auto;
+     }
+     .boxMenu_Dest{
+         display: table-cell;
+         width: 30%;
+         height: 100%;
+        }
+     
+     .Cont_contBox_Dest{width: 100%;height: 100%;margin: auto;}
+     .modelDest{
+         width: 100%;
+         height: 500px;
+         opacity: 0.4;
+         border: 1px solid #ec971d00;
+         transition: opacity 0.4s ease 0s;
+         -webkit-transition: opacity 1s;
+         -moz-transition: opacity 1s;
+         -o-transition: opacity 1s;
+         -ms-transition: opacity 1s;
+        }
+     .modelDest:hover{opacity: 1;}
+
+     .contBox_Dest {
+         margin: auto;
+         position: relative;
+        }
+     .Box_Dest {
+         width: 100%;
+         height: 100%;
+         margin: -167% 0 35% 0%;
+        }
+         
+     .boxDest_PN {margin: 100% 0 0 0;}
+     button.Vizualizar_Dest {
+         background-color: #00000000;
+         border: none;
+         cursor: pointer !important;
+         display: flex;
+         margin: 0% auto 0 auto;
+        }
+     button.Vizualizar_Dest a{
+         color: #fff;
+         text-decoration: none;
+         background-color: #88888242;
+         border: solid rgba(255, 255, 255, 1) 3px;
+         padding: 8px;
+         font: normal normal normal 15px/1.875em raleway,sans-serif;
+         transition: background-color 0.4s ease 0s;
+         -webkit-transition: background-color 1s;
+         -moz-transition: background-color 1s;
+         -o-transition: background-color 1s;
+         -ms-transition: background-color 1s;
+        }
+     button.Vizualizar_Dest a:hover{
+         background-color: #ffff;
+         color: #ec9b26;
+        }
+ /* --------------/* Formulario /*------------------*/
+ /* ---- Informação ----*/
+      .contInfo_form {
+          background-color: #f4f9f9;
+          margin-top: 5%;
+          display: inline-flex;
+         }
+
+      .contBox_Info {
+          max-width: 50%;
+          display: inline-block;
+         }
+
+      h1.titleInfo {
+         margin-top: 10%;
+         color: #ec971d;
+         font: normal normal normal 24px/1.35em poppins-extralight,poppins,sans-serif;
+         font-weight: bold;
+         text-indent: 40px;
+        }
+
+      p.textIInfo {
+          text-indent: 20px;
+          text-align: center;
+          margin: 0% 4%;
+          font: normal normal normal 15px/1.875em raleway,sans-serif;
+          color: #802011;
+        }
+ /*--- Formulario ---*/
+     form.formular{width: 149%;}
+     .menseg{
+         max-width: 50%;
+         margin-left: 2%;
+         float: right;
+         margin-top: 1%;
+         padding-left: 16px;
+         padding-right: 10px;
+         border-radius: 0;
+         color: #802011;
+         border-color: rgba(128, 32, 17, 1);
+         padding-top: 0.75em;
+         box-sizing: border-box;
+         font: 400 13.3333px Arial;
+         font-style: normal;
+         font-variant-ligatures: normal;
+         font-variant-caps: normal;
+         font-variant-numeric: normal;
+         font-variant-east-asian: normal;
+         font-weight: 400;
+         font-stretch: normal;
+         font-size: 13.3333px;
+         line-height: normal;
+         font-family: Arial;
+        }
+     .form-control {
+         display: block;
+         padding: 0.375rem 0.75rem;
+         font-size: 1rem;
+         line-height: 1.5;
+         color: #000;
+         background-color: transparent;
+         background-clip: padding-box;
+         border-top: none;
+         border-left: none;
+         border-right: none;
+         border-radius: 0px;
+         background-color: transparent;
+         border-bottom: 1px solid #802011;
+         /* border-radius: 0.25rem; */
+         box-shadow: none;
+         transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        }
+     textarea#rMensg {
+         border-top: 1px solid #f4f9f9;
+         border-left: 1px solid #f4f9f9;
+         border-right: 1px solid #f4f9f9;
+         border-radius: 0px;
+         background-color: transparent;
+         border-bottom: 1px solid #802011;
+         height: 140px;
+         width: 100%;
+         resize: none;
+        }
+     button.formEnviar {
+         background-color: #802011;
+         border: none;
+         width: 100%;
+         padding: 10px;
+         color: aliceblue;
+         font: normal normal normal 20px/1.75em 'times new roman',times,serif;
+         font-weight: bold;
+         transition: background-color 0.4s ease 0s;
+         -webkit-transition: background-color 1s;
+         -moz-transition: background-color 1s;
+         -o-transition: background-color 1s;
+         -ms-transition: background-color 1s;
+        }
+     button.formEnviar:hover {
+         background-color: transparent;
+         border: 1px solid #802011;
+         color: #802011;
+         font-weight: bold;
+        }
+
+/* ------------------/ Rodape /--------------*/
+
+ .Footer {
+     background-image: url(../img/footer.jpg);
+     max-width: 100%;
+     margin: 0px 4px 0 0;
+    }
+
+ h3.text-center {
+     font: normal normal normal 24px/1.75em 'times new roman',times,serif;
+     color: #ec971d;
+     font-weight: bold;
+    }
+
+ a.list-group-item.list-group-item-action.list-group-item-primary {
+     background-color: transparent;
+     color: #f8f9fa;;
+     font: normal normal normal 17px/1.75em 'times new roman',times,serif;
+     font-weight: bold;
+     padding: 2px;
+    }
+
+/* -----------------/ Rodape_bottom /------------------------*/
+ blockquote.blockquote.text-center.text-light {
+     font: normal normal normal 14px/1.79em raleway,sans-serif;
+     color: #802011;
+     border-top: 1px dashed;
+     /* padding-right: 0px; */
+     margin: auto -2% auto 0;
+    }
+ .btn-block.btn-group-lg.footConten {
+     color: #f8f9fa;
+     text-align: center;
+     font: normal normal normal 14px/1.75em 'times new roman',times,serif;
+    }
+ .list-group.text-center.footConten {
+     font: normal normal normal 14px/1.75em 'times new roman',times,serif;
+     color: #f8f9fa;
+    }
+ .Cons{
+     border: groove;
+     width: 98%;
+    }
+
+/* -------------------------/ JanelaModal /------------------------*/
+ /* ---------/Visualização do Produto /---------*/
+     h5.modal-title {
+         color: #612417;
+         font-weight: bold;
+        }
+     .BoxContent_modal {
+         width: 67%;
+         margin: auto;
+        }
+     .col-6.ContVisualizProd {
+         flex: 0 0 100%;
+         max-width: 100%;
+         margin: auto;
+        }
+     /*--IMG--*/
+         img.BoxVisualImag_Prod {
+             width: 230px;
+             margin-left: -6%;
+            }
+     /*--Nome--*/
+         h5.VisualNome_Prod {
+             font: normal normal normal 15px/1.875em raleway,sans-serif;
+             color: #802011;
+             font-weight: bold;
+            }
+     /*--Descricão--*/
+         p.VisualDescrT_Prod {
+             font: normal normal normal 13px/1.875em raleway,sans-serif;
+             color: #802011;
+             font-weight: bold;
+             margin-bottom: 0%;
+            }
+         .BoxInfor_Prod {
+             margin-left: 47%;
+             margin-top: -48%;
+             text-align: justify;
+             font: normal normal normal 13px/1.875em raleway,sans-serif;
+             color: rgba(128, 32, 17, 0.8);
+           }
+     /*--Preço E Quantidade Total de Itens--*/
+         span.VisualValor_Prod {
+             font-family: calibri;
+             font-weight: bold;
+             color: #6a6a74;
+             text-align: right;
+             float: right;
+            }
+         .ProdTotal {
+             width: 82px;
+             text-align: center;
+             border: none;
+             font-family: calibri;
+             font-weight: bold;
+             color: #6a6a74;
+             float: right;
+             margin: 0% 6% 0% 0%;
+            }
+         span.VisualDesc_Camp{
+             margin-left: 5%;
+             font-family: calibri;
+             font-weight: bold;
+             color: rgb(128 32 17 / 71%);
+             font-size: 17px;
+            }
+         .boxVisualQuantid_Prod {
+             width: 30%;
+             text-align: center;
+             font-size: 19px;
+             color: #612417;
+             float: right;
+             margin-top: -5%;
+             font-weight: bold;
+           }
+         .VisualQuantid_Prod {margin-top: 1%;}
+         .BoxDetalh_Prod {
+             margin-top: 9%;
+             margin-left: -8%;
+             width: 230px;
+            }
+         .BoxDetalh_Prod.campeao,.BoxDetalh_Prod.abus {margin-top: -2%;}
+         .BoxDetalh_Prod.kitcomp {margin-top: -7%;}
+         .BoxDetalh_Prod.beng {margin-top: 11%;}
+         input.quantid {
+             width: 82px;
+             text-align: center;
+             border: none;
+             font-family: calibri;
+             font-weight: bold;
+             color: #6a6a74;
+             margin: 9% 0 0px -14%;
+            }
+         span.unidadProd {
+             font-weight: bold;
+             color: #6a6a74;
+             text-align: right;
+             float: right;
+             margin: 0% -43% 0% 0%;
+            }
+     /*--Pedido Especial--*/
+         .VisualPedidEsp_Prod{
+             color: rgb(152 152 152 / 78%);
+             font-family: calibri;
+             font: normal normal normal 16px/1.875em raleway,sans-serif;
+             margin-left: 5%;
+             margin-top: 3%;
+             padding: 1%;
+            }
+         button.BoxVisualPedidEsp_Prod.boxpedidEspe_car {
+             margin: -6px 0% 0% 0%;
+             padding: 0;
+             height: 29px;
+             width: 138px;
+            }
+         button.BoxVisualPedidEsp_Prod {
+             background-color: #ffffff63;
+             border: 1px solid #767676;
+             color: rgb(152 152 152 / 78%);
+             font-family: calibri;
+             font: normal normal normal 16px/1.875em raleway,sans-serif;
+             margin: 0% 0% 0% 6%;;
+            }
+         input.pedidEsp {
+             margin: 0% 0% 0% 5.7%;
+             width: 62.6%;
+            }
+     /*--Button--*/
+         button.VisualButton_Prod {
+             float: right;
+             border: 1px solid #802011;
+             color: aliceblue;
+             padding: 2%;
+             cursor: cell;
+             margin-right: 14%;
+             font-weight: bold;
+             background-color: rgb(97, 36, 23);
+            }
+     /*--Pedido Especial--*/
+         button.Visual_buttonProd {
+             color: #fff;
+             background: #dc3545 linear-gradient( 180deg, #e15361, #dc3545) repeat-x;
+             border-color: #dc3545;
+             box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%), 0 1px 1px rgb(0 0 0 / 8%);
+             border: 1px solid transparent;
+             padding: 0.375rem 0.75rem;
+             border-radius: 0.25rem;
+            }
+     /*--AVISO--*/
+         span.VisualAvisoT_Prod {font-weight: bold;}
+         .BoxVisualAviso_Prod {
+             text-align: center;
+             width: 125px;
+             float: right;
+             margin-top: -10%;
+             color: #612417;
+            }
+ /* ----------/ ModaHorarios /---------*/
+     g.relog{
+         fill-opacity: 1;
+         stroke: rgb(153, 153, 153);
+         stroke-opacity: 1;
+         fill: rgb(236, 151, 29);
+        }
+     .contRelog{margin: auto;}
+     .boxRelog {
+         margin: 0 0 0 40%;
+         width: 60px;
+        }
+     h5.relogInfor {
+         text-align: center;
+         font-weight: bold;
+         color: #ec971d;
+         line-height: 1.41em;
+         letter-spacing: normal;
+         pointer-events: auto;
+         font: normal normal normal 22px/1.41em poppins-extralight,poppins,sans-serif;
+        }
+     .relogConv{
+         text-align: center;
+         line-height: 1.75em;
+         font: normal normal normal 16px/1.75em 'times new roman',times,serif;
+         color: #802011;
+        }
+     p.relogText {
+         text-align: center;
+         line-height: 1.75em;
+         font: normal normal normal 13px/1.75em 'times new roman',times,serif;
+         color: #802011;
+        }
+ /*---------/ Carrinho /---------*/
+     div#ModalPedidos,#ModalHamburgueres,#ModalBebidas,#ModalMilkshake,#ModalMenus{
+         overflow-x: hidden;
+         overflow-y: auto;
+        }
+     /*--Tamanho das Janelas e borda da Top--*/
+         .modalPedidos {max-width: 950px;}
+         .modalPedid{border-bottom: 1px solid #802011;}
+         .container_pes{
+             flex: 0 0 58%;
+             max-width: 58%;
+             margin-top: -14px;
+            }
+     /*--Produtos--*/
+         .boxPedido_feito {margin-bottom: 17%;}
+         /*--Imagen--*/
+             .box_imgPedido {
+                 margin-top: 3%;
+                 width: 150px;
+                }
+             .imgBebida{margin-bottom: 2%;}
+             img.imgPedido {
+                 width: 150px;
+                 height: 200px;
+                }
+         /*--Nome--*/
+             span.nomePedido {
+                 font: normal normal normal 13px/1.875em raleway,sans-serif;
+                 color: #802011;
+                 font-weight: bold;
+                 text-align: center;
+                }
+         /*--Button Quantidad--*/
+             .adiRed_pedido {
+                 float: right;
+                 margin-top: -42%;
+                 color: #802011;
+                 font-size: 23px;
+                }
+             span.quantidAdico {font-size: 15px;}
+             .adicionar:hover,.reduzir:hover {color: #8020117d;}
+         /*--Descric--*/
+             .descrPedido {
+                 width: 70%;
+                 margin-left: 32%;
+                 margin-top: -39%;
+                }
+             p.incrPedido {
+                 width: 359px;
+                 margin-top: 2%;
+                 text-align: justify;
+                 font: normal normal normal 12px/1.875em raleway,sans-serif;
+                 color: rgba(128, 32, 17, 0.8);
+                 /* font-weight: bold; */
+                }
+             select#cPedido {
+                 color: rgb(152 152 152 / 78%);
+                 font-family: calibri;
+                 font: normal normal normal 16px/1.875em raleway,sans-serif;
+                }
+         /*--Peço--*/
+             div#detalhe_pedidoFeito {display: flex;}
+             span.pecoPedido {
+                 margin-left: 9%;
+                 font-family: calibri;
+                 font-weight: bold;
+                 text-align: center;
+                 color: rgb(128 32 17 / 71%);
+                 font-size: 16px;
+                }
+             .VisualPreco_Prod.carvisuaPreco {margin-right: -65%;}
+             span.unidadProd.carUnid_prod {margin-right: -37%;}
+             input.ProdTotal.cartot_prod {
+                 width: 62px;
+                 margin-right: 48%;
+                }
+             .valoresprod {
+                 display: block;
+                 width: 40%;
+                 margin: -2% 0% 0% 21%;
+                }
+     /*--Area do menu--*/
+         .container_menuCar.col-6 {
+             float: left;
+             max-width: 20%;
+             border-right: 1px solid #802011;
+             margin-left: -29px;
+             margin-top: -14px;
+            }
+         a.itemMenu_Car.nav-link.ml-4,a.itemMenu_Car.titl.nav-link.active {
+             color: rgb(128, 32, 17);
+              padding:4px;
+            }
+         a.itemMenu_Car.activi{
+             background-color: rgb(240 234 232);
+             color: rgb(128, 32, 17);
+             padding:4px;
+            }
+         nav.itemMenu_Car.nav.nav-pills.flex-column {margin-left: -8%;}
+         nav#navbarCar {
+             width: 168px;
+             margin-left: -16px;
+            }
+         a.itemMenu_Car.Meuspedidos {
+             border-top: 1px solid;
+             border-radius: 0;
+             width: 87%;
+             text-align: center;
+            }
+     /*--Area Inf Precario--*/
+         .container_Valor.col-6 {
+             float: right;
+             max-width: 25%;
+             border-left: 1px solid #802011;
+             margin-left: 0px;
+             margin-top: -14px;
+            }
+         /*--Titulo--*/
+             h5.ValorTotal {
+                 padding: 6px;
+                 border-bottom: 1px solid;
+                 border-color: rgba(128, 32, 17, 0.30000000000000004)!important;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 color: rgb(128, 32, 17);
+                 font: normal normal normal 18px/1.75em times new roman,times,serif!important;
+                }
+         /*--Inf Preço e Unidade--*/
+             .total.totalCar{
+                 padding: 4% 0px 0px;
+                 border-top: 1px solid rgb(128 32 17);  
+                }
+             .total.totalCar,span.valorTotal.valorTotal-Car{
+                 font-size: 14px!important;
+                 font: normal normal normal 18px/1.75em times new roman,times,serif!important;
+                 color: rgb(128, 32, 17);
+                }
+             .total .valorTotal.car{
+                 color: #802011;
+                 margin-top: 2%;
+                 margin-right: 16%;
+    width: 128px;
+                }
+             .unidade {
+                 float: right;
+                 margin-top: -10%;
+                 margin-right: 6%;
+                 font-weight: 700;
+                 font-size: 20px;
+                }
+             .unidade.car{margin-top: -16%;}
+         /*--Button--*/
+             .bt_car {
+                 display: inline-block;
+                 margin-left: 0%;
+                 margin-top: 9%;
+                }
+             a.button.vibrate.buttonCar {
+                 border-radius: 4px;
+                 padding: 10px 7px;
+                 background: #f50300;
+                 text-align: center;
+                 color: #ffffff;
+                 font: 700 14px/100% Arial, Helvetica, sans-serif;
+                }
+             a.button.vibrate.buttonCar:hover {
+                 color: #f50300;
+                 background-color: transparent;
+                 text-decoration: none;
+                 border: 1px solid #f50300;
+                }
+         /*--Aviso Carrinho--*/
+             .boxCar {max-width: 100%;}
+         /*--Inf e Icone Carrinho--*/
+             svg.svg_empty_cart {
+                 width: 55px;
+                 margin: 15px 0 1px 24px;
+                }
+             g.imgCar path {fill: rgba(128, 32, 17, 0.30000000000000004)!important;}
+             p.AvisoCarinho {
+                 line-height: 19px!important;
+                 font: normal normal normal 18px/1.75em times new roman,times,serif!important;
+                 color: rgba(128, 32, 17, 0.6);
+                 margin-left: -28%;
+                 text-align: center;
+                }
+     /*--Area Central inf prod--*/
+         .CarInfor{
+             text-align: center;
+             margin-left: -33%;
+            }
+         span.adicionar, span.reduzir {
+             cursor: pointer;
+             font-size: 26px;
+             font-weight: bold;
+            }
+         /*--TopCabec_Horario da entrega--*/
+             .BoxInfo_Entrega {
+                 border-bottom: 1px solid rgb(217 187 183);
+                 width: 80%;
+                 margin: auto;
+                 text-align: center;
+                }
+             p.InforEntreg {
+                 font: normal normal normal 14px/1.75em times new roman,times,serif!important;
+                 color: rgb(128, 32, 17);
+                }
+             .titleInfo_entreg {
+                 color: rgb(128, 32, 17);
+                 font: normal normal normal 22px/1.34em poppins-extralight,poppins,sans-serif!important;
+                }
+         /*--Cabec_Titulo--*/
+             h5.titlesec {font: normal normal normal 26px/1.34em poppins-extralight,poppins,sans-serif!important;}
+             .scrollspySite.modalCar {margin-left: -4.3%;}
+             .Boxititle_sec {
+                 color: rgb(128, 32, 17);
+                 text-align: center;
+                 margin-top: 4%;
+                }
+         /*--Cabec_Sub Titulo--*/
+             span.meusPedidos {
+                 font: normal normal normal 15px/1.34em poppins-extralight,poppins,sans-serif!important;
+                 color: rgb(128, 32, 17);
+                 border-bottom: 1px solid #802011;
+                }
+             .BoxPedido_Car {margin-top: 7%;}
+         /*--Preço--*/
+             input.totalitens {
+                 border: none;
+                 text-align: right;
+                 width: 15px;
+                 color: #802011;
+               }
+         /*--ModaPedidos Quantidade Itens --*/
+             span.quantidade {
+                 float: right;
+                 color: rgb(128, 32, 17);
+                 font: normal normal normal 12px/1.34em poppins-extralight,poppins,sans-serif!important;
+                }   
+     /*---------/ Modal Hambúrguer /---------*/
+         input.quantidEment{
+             cursor: pointer;
+             font-size: 17px;
+             font-weight: bold;
+             margin-left: 30%;
+             text-align: center;
+            }
+ /*---------/ 
+     button.VisualReduzir_Prod, button.VisualAdicionar_Prod{
+         border: none;
+         background-color: transparent;
+         color: #612417;
+         float: left;
+         font-size: 26px;
+         cursor: pointer;
+         margin-right: 8%;
+        }
+     button.VisualAdicionar_Prod {
+         margin-top: -51%;
+         margin-left: 23%;
+        }
+     button.VisualReduzir_Prod {margin-left: -15%;}
+ 
+     .VisualQuantid_Adic_Prod {
+         margin-right: 60%;
+         font-size: 17px;
+         margin-top: 15%;
+       }
+     button.VisualButton_Prod.remov {
+         margin-top: 1%;
+         width: 185px;
+       }
+     button.VisualButton_Prod:hover .VisualButton_Prod.remov {}
+ /---------*/
+
+input#cQtd {
+    margin-top: 12%;
+    margin-left: -18%;
+    width: 82px;
+    text-align: center;
+    border: 1px solid #9494943b;
+}
+.gjhk {
+    display: table-cell;
+    padding: 1%;
+}
+a.hgdf {
+    width: 226px;
+}
+.butAdd{background-color: rgb(128 32 17);
+    border-radius: 4px;
+    display: inline-block;
+    padding: 10px 7px;
+    text-align: center;
+    color: #ffffff;
+    margin: 7px 0px 0 227px;
+    font: 700 18px/100% Arial, Helvetica, sans-serif;
+    border-color: #f50300;}
+
+    input#cTotProd {
+    width: 36%;
+    float: right;
+    text-align: center;
+    border: none;
+    font-family: calibri;
+    font-weight: bold;
+    color: #6a6a74;
+}
+.VisualTotal_Prod {
+    margin-top: 3%;
+}
+
+
+
+

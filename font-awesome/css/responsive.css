@@ -1,0 +1,837 @@
+@media(max-width:1440px){
+ /*Home_page*/
+   ul#autoWidth {margin-top: 3%;}
+   .titleLogo, .slogam {left: 7%;}
+   .contInfo_form {margin-top: 9%}
+}
+
+@media(max-width:1280px){}
+
+@media(max-width:1224px){
+ /*Home_page*/
+   blockquote.blockquote.text-center.text-light{margin: -5% 0% auto 0;}
+   .titleLogo, .slogam {left: 9%;}
+}
+
+@media(max-width:800px){
+ /*Home_page*/
+   .slogam {left: 12%;}
+   .titleLogo {left: 12%;}
+   .Telefone {margin-left: 6%;}
+   button.navbar-toggler.bg-white.ml-auto {margin-right: -6%;}
+   span.totalCompra {
+      right: 9px;
+      margin-top: -22%;
+   }
+   .cardCarrinh_box {
+      margin-left: 155%;
+      margin-top: -27%;
+   }
+    .CarrinhImagem svg {
+      margin: 7px 264px 0px 0px;
+      position: relative;
+    }
+   ul.navbar-nav.ml-auto {
+      align-items: flex-end;
+      margin: 0% -6% 0 0px;
+    }
+    .topCabecalho {margin: 0 0% 0 0%;}
+    .home.cart-list {
+      position: relative;
+      left: -82%;
+      margin-top: -7%;
+    }
+   samp.titleSlide {font-size: 34px;}
+   h1.titleSlide_public{
+      font-size: 52px;
+      margin: 7% 0 0 0;
+    }
+   .bordeR {margin: 3% 0 0 0;}
+   .bordeL {margin: 3% 0 0 0;}
+   h1.titleInfo {font-size: 30px;}
+   p.textIInfo {text-align: justify;}
+   .contInfo_form {margin-top: -2%;}
+ /*Sobr_page*/
+   h1.Intropag {font-size: 40px;}
+   .menuVertical {
+     margin-left: -14%;
+     width: 230px;
+    }
+    .ContacMorad {
+     width: fit-content;
+     margin-left: 2%;
+    }
+   .container.Sob_box {margin-bottom: -32%;}
+   .scrollspySite {height: 29%;}
+   .mapaLocal {height: 247px;}
+
+}
+@media(max-width:768px){
+ /*Sobr_page*/
+   .menuVertical {
+     margin-left: -11%;
+     width: 230px;
+   }
+}
+
+@media(max-width:640px){
+ /*Home_page*/
+   nav.navbar.navbar-expand-lg.navbar-light {width: 100%;}
+   nav.topCabecalho.navbar.navbar-expand-lg.navbar-light.bg-white {
+      width: 100%;
+      margin: 0%;
+    }
+    .email {margin-left: -3%;}
+    .cardCarrinh_box {margin-left: 169%;}
+    span.totalCompra {right: 3px;}
+    button.navbar-toggler.bg-white.ml-auto {margin-right: 6%;}
+    ul.navbar-nav.ml-auto {margin: 0% 5% 0% 0%;}
+    img.Logo {margin: 0% 0% 0% -11%;}
+    div#carouselSite {
+      /*width: 98%;*/
+      margin-top: 9%;
+    }
+   .carousel-inner {height: 282px;}
+   .carousel-item img {height: 282px;}
+   .carousel-caption.d-md-block {top: 58%;}
+   h1.titleSlide_public {
+     font-size: 30px;
+     margin: 3% 0 0 0;
+    }
+   samp.titleSlide {font-size: 25px;}
+   p.textSlide {font-size: 20px;}
+   .boxMenu_Dest {
+     display: inline-block;
+     margin: 0 -2px 0 0px;
+    }
+   .Cont_contBox_Dest {margin: 0 0% 0 11%;}
+   .modelDest {height: 340px;}
+   .Cont_contBox_Dest {height: 340px;}
+
+   .boxDest_PN h2.nome {font-size: 13px;}
+   .boxDest_PN .details p{
+     font-size: 14px;
+     margin-top: -7%;
+   }
+   button.Vizualizar_Dest a {
+     font-size: 11px;
+     margin-top: -13%;
+   }
+   h1.titleInfo {font-size: 20px;}
+   p.textIInfo {font-size: 11px;}
+   form.formular {width: 141%;}
+   .footerFilhares{top: -24px;}
+ /*Sobr_page*/
+   h1.Intropag {font-size: 25px;}
+   .menuVertical {
+     margin-left: -16%;
+     width: 150px;
+     font-size: 15px;
+    }
+   .scrollspySite{width: 180%;}
+   .boxEstorial {margin-left: -27%;} 
+   .container.Sob_box {margin-bottom: -75%;}
+   .boxMorad {margin-left: -32px;} 
+}
+@media(max-width:600px){
+  /*Home_page*/
+    nav.navbar.navbar-expand-lg.navbar-light {width: 103%;}
+    nav.topCabecalho.navbar.navbar-expand-lg.navbar-light.bg-white {width: 103%;}
+    .home.cart-list {right: 66%;}
+    .cardCarrinh_box {margin-left: 159%;}
+    span.totalCompra {right: 25px;}
+    .contacto {font-size: 12px;}
+    .titleLogo p span span a{font-size: 19px;}
+    .slogam {font-size: 12px;}
+    button.navbar-toggler.bg-white.ml-auto {margin-right: 7%;}
+    img.Logo {margin: 0% 0% 0% -35%;}
+    .titleLogo,.slogam {left: 8%;}
+    ul.navbar-nav.ml-auto {margin: 0% 7% 0% 0%;}
+    a.lSPrev,a.lSNext {top: 59%;}
+ /*Sobr_page*/
+   h1.Intropag {font-size: 23px;}
+  
+   .boxEstorial {
+     margin-top: -30%;
+     margin-left: 29%;
+    }
+   .scrollspySite {
+     margin-top: -38%;
+     margin-left: -12%;
+   }
+}
+@media(max-width:565px){
+  /*Home_page*/
+    button.navbar-toggler.bg-white.ml-auto {margin-right: 5%;}
+    ul.navbar-nav.ml-auto {margin: 0% 4% 0% 0%;}
+   .titleLogo, .slogam {left: 9%;}
+   .cardCarrinh_box {margin-left: 67%;}
+   .titleLogo p span span a {font-size: 16px;}
+   .slogam {font-size: 10px;}
+   span.totalCompra {left: 49%;}
+   .contacto {font-size: 11px;}
+   samp.titleSlide {font-size: 23px;}
+   p.textSlide {font-size: 18px;}
+   .contInfo_form {margin-top: 4%;}
+   .form-group.col-sm-6 {width: 36%;}
+   input#inputAssunto {width: 72%;}
+   textarea#rMensg,button.formEnviar {
+     width: 72%;
+     margin-left: -27%;
+   }
+   .row {display: block;}
+   .row.Footer {margin: 0px -4px 0 4px;}
+   .footerMenu {
+     width: 39%;
+     left: -22px;
+    }
+    .mapaSite {margin-top: -6%;}
+   .footerFilhares {
+     width: 39%;
+     top: -200px;
+     left: 168px;
+    }
+   p.roda {margin-left: -12px;}
+   .footerContacto {
+     width: 39%;
+     top: -378px;
+     left: 352px;
+    }
+   img#redSocial {width: 22px;}
+   blockquote.blockquote.text-center.text-light {
+     font-size: 8px;
+     margin: -137% 0% auto 0;
+   }
+   blockquote.blockquote.text-center.text-light {
+      font-size: 13px;
+      margin: -83% 0% auto 0;
+    }
+}
+@media(max-width:540px){
+ /*Home_page*/
+    button.navbar-toggler.bg-white.ml-auto {margin-right: 5%;}
+    ul.navbar-nav.ml-auto {margin: 0% 4% 0% 0%;}
+   .titleLogo, .slogam {left: 10%;}
+   .cardCarrinh_box {margin-left: 161%;}
+   .titleLogo p span span a {font-size: 16px;}
+   span.totalCompra {left: 290px;}
+   .contacto {font-size: 11px;}
+   samp.titleSlide {font-size: 23px;}
+   p.textSlide {font-size: 18px;}
+   .contInfo_form {margin-top: 4%;}
+   .form-group.col-sm-6 {width: 36%;}
+   input#inputAssunto {width: 72%;}
+   textarea#rMensg,button.formEnviar {
+     width: 72%;
+     margin-left: -27%;
+   }
+   .row {display: block;}
+   .row.Footer {margin: 0px -4px 0 4px;}
+   .footerMenu {
+     width: 39%;
+     left: -22px;
+    }
+    .mapaSite {margin-top: -6%;}
+   .footerFilhares {
+     width: 39%;
+     top: -200px;
+     left: 168px;
+    }
+   p.roda {margin-left: -12px;}
+   .footerContacto {
+     width: 39%;
+     top: -378px;
+     left: 352px;
+    }
+   img#redSocial {width: 22px;}
+   blockquote.blockquote.text-center.text-light {
+     font-size: 8px;
+     margin: -137% 0% auto 0;
+   }
+   blockquote.blockquote.text-center.text-light {
+      font-size: 13px;
+      margin: -83% 0% auto 0;
+    }
+  /*Sobr_page*/
+   h4#item1-1,h5#item1-2,h5#item1-3 {font-size: 1rem;}
+   p.textEstorial {font-size: 12px;}
+   .textEstorial img#logoImg {width: 75px;}
+   .textEstorial img#politEntrega {width: 115px;}
+   .mapaLocal {height: 174px;}
+   .menuVertical {
+     margin-left: 0%;
+     width: 155px;
+     font-size: 15px;
+   }
+   .scrollspySite {
+     margin-top: -47%;
+     margin-left: 3%;
+     height: 244px;
+     width: 70%;
+   }
+   b.titleBox_morada {font-size: 14px;}
+   ul.boxMorad ,p.textBox_morada{font-size: 12px;}
+   .contInfo_form {margin-top: 66%;}
+}
+@media(max-width:480px){
+ /*Home_page*/
+   .home.cart-list {
+     max-width: 240px;
+     left: -62%;
+   }
+   .initial.empty {font-size: 11px;}
+   .total span {font-size: 13px;}
+   .total .valorTotal {
+     margin-top: 4%;
+     font-size: 15px;
+    }
+   a.button.vibrate {
+     font-size: 13px;
+     margin-left: -6px;
+     margin-right: 2px;
+   }
+   .titleLogo, .slogam {left: 11%;}
+   .contacto {font-size: 9px;}
+   div#carouselSite {margin-top: 11%;}
+   samp.titleSlide {font-size: 19px;}
+   p.textSlide {font-size: 15px;}
+
+   .contInfo_form {display: grid;margin-top: 4%;}
+   .contBox_Info {max-width: 100%;}
+   p.textIInfo {
+      font-size: 13px;
+      text-indent: 38px;
+      text-align: justify;
+    }
+   h1.titleInfo {
+      font-size: 18px;
+      margin-top: 2%;
+    }
+   .menseg {max-width: 100%;}
+   form.formular {width: 100%;}
+   .form-group.col-sm-6 {width: 49%;}
+   input#inputAssunto {width: 98%;}
+   textarea#rMensg, button.formEnviar {
+     width: 98%;
+     margin-left: -3%;
+   }
+   h3.text-center {font-size: 18px;}
+   a.list-group-item.list-group-item-action.list-group-item-primary {font-size: 13px;}
+   .footerMenu {left: -22px;}
+   .footerFilhares {
+     top: -162px;
+     left: 145px;
+    }
+    p.roda,.footConten p {font-size: 11px;}
+    .footerContacto {
+      width: 39%;
+      top: -305px;
+      left: 312px;
+    }
+   blockquote.blockquote.text-center.text-light {
+     margin: -77% 0% auto 0;
+     font-size: 12px;
+    }
+ /*Sobr_page*/
+ .contInfo_form {margin-top: 86%;}
+ .scrollspySite {
+   margin-top: -54%;
+   margin-left: 5%;
+  }
+  ul.boxMorad, p.textBox_morada {font-size: 11px;}
+}
+@media(max-width:414px){
+ /*Home_page*/
+   .email {margin-left: -4%;}
+   .Telefone {margin: -1% 0% 0 0;}
+   .cardCarrinh_box {
+      margin-top: -27%;
+      left: 2%;
+    }
+    .home.cart-list {
+      max-width: 240px;
+      left: -37%;
+   }
+   span.totalCompra {
+     left: 89%;
+     margin-top: -22%;
+   }
+   img.Logo {margin: 0% 0% 0% -20%;}
+   .titleLogo, .slogam {left: 16%;}
+   .home.cart-list { max-width: 164px;}
+   .initial.empty {font-size: 10px;}
+   a.button.vibrate {
+     font-size: 8px;
+     margin-left: -7px;
+     margin-right: 4px;
+   }
+   div#carouselSite {margin-top: 12%;}
+   h1.titleSlide_public {
+      font-size: 24px;
+      margin: 3% 0 0 0;
+   }
+   p.textSlide_public {font-size: 15px;}
+   samp.titleSlide {font-size: 17px;}
+   .bordeL,.bordeR {width: 25%;}
+   .boxDest_PN h2.nome {font-size: 12px;}
+   .boxDest_PN .details p {font-size: 13px;}
+   button.Vizualizar_Dest a {font-size: 9px;}
+   .Box_Dest {margin: -194% 0 35% 0%;}
+   h1.titleInfo {font-size: 17px;}
+   p.textIInfo {font-size: 11px;}
+   .footerFilhares {
+     top: -164px;
+     left: 126px;
+    }
+   .footerContacto {
+     width: 39%;
+     top: -307px;
+     left: 263px;
+   }
+   p.roda,.footConten p {font-size: 9px;}
+   blockquote.blockquote.text-center.text-light {
+     margin: -90% 0% auto 0;
+     font-size: 11px;
+   }
+ /*Sobr_page*/
+   .menuVertical {
+     margin-left: -3%;
+     width: 140px;
+    }
+   .scrollspySite {margin-top: -62%;}
+}
+@media(max-width:412px){}
+@media(max-width:411px){
+  /*Home_page*/
+   .home.cart-list {max-width: 161px;}
+   a.button.vibrate {
+     font-size: 8px;
+     margin-left: -13px;
+     margin-right: 11px;
+    }
+}
+@media(max-width:384px){
+ /*Home_page*/
+   .row.Footer {margin: 0;}
+   .footerMenu {left: -18px;}
+   .footerContacto {left: 255px;}
+   blockquote.blockquote.text-center.text-light {margin: -102% 0% auto 0;}
+ /*Sobr_page*/
+   .scrollspySite {margin-top: -67%;}
+   .menuVertical {margin-left: -4%;}
+}
+@media(max-width:375px){
+ /*Home_page*/
+   .titleLogo, .slogam {left: 18%;}
+   p.textIInfo {font-size: 10px;}
+   .footerFilhares {
+     top: -164px;
+     left: 118px;
+    }
+   .menuVertical {font-size: 14px;}
+   .footerContacto {
+     top: -331px;
+     left: 237px;
+    }
+  /*Sobr_page*/
+   .scrollspySite {margin-left: 6%;}
+}
+
+@media(max-width:360px){
+ /*Home_page*/
+   .boxMenu_Dest.mun3 {display: none;}
+   .model{height:284px;}
+   .boxMenu_Dest {margin: 0 77px 0 -11px;}
+   button.Vizualizar {
+      font-size: 14px;
+      margin-top: -6%;
+    }
+   .contInfo_form {margin-top: -11%;}
+   .modelDest {
+     width: 179px;
+     height: 284px;
+    }
+   .Cont_contBox_Dest {width: 179px;}
+   .boxDest_PN h2.nome,.boxDest_PN .details p {font-size: 14px;}
+   .Box_Dest {margin: -163% 0 35% 0%;}
+   button.Vizualizar_Dest a {
+     font-size: 11px;
+     margin-top: -13%;
+   }
+   .footerContacto {
+      left: 234px;
+      top: -355px;
+   }
+   .footerFilhares {
+     top: -188px;
+     left: 118px;
+   }
+   blockquote.blockquote.text-center.text-light {margin: -120% 0% auto 0;}
+ /*Sobr_page*/
+ h1.Intropag {font-size: 16px;}
+ h4#item1-1, h5#item1-2, h5#item1-3 {font-size: .8rem;}
+ .menuVertical {
+    font-size: 12px;
+    width: 122px;
+    margin-left: -2%;
+  } 
+ .scrollspySite {margin-left: 5%;}
+ .textEstorial img#politEntrega {width: 82px;}
+ nav.itemMenu_vert{margin-left: -10%;}
+ a.itemMenu_vert {width: 105px;}
+ .contInfo_form {margin-top: 81%;}
+}
+@media(max-width:320px){
+ /*Home_page*/
+   img.Logo {margin: -17% 0% 0% -15%;}
+   .titleLogo, .slogam {left: 22%;}
+   h1.titleSlide_public {
+      font-size: 20px;
+      margin: 3% 0 0 0;
+   }
+   span.totalCompra {
+     margin-top: -21%;
+     left: 84%;
+   } 
+   .cardCarrinh_box {
+     margin-top: -26%;
+     left: -3%;
+   }
+   .carousel-caption.d-md-block {
+      top: 71%;
+      height: 36%;
+   }
+
+   .model{height:267px;}
+   .boxMenu_Dest {margin: 0 71px 0 -10px;}
+   h1.titleSlide_public {margin: -1% 0 0 0;}
+   .modelDest {
+     width: 162px;
+     height: 267px;
+    }
+   .Cont_contBox_Dest {width: 162px;}
+   .boxDest_PN h2.nome,.boxDest_PN .details p {font-size: 14px;}
+   .Box_Dest {margin: -163% 0 35% 0%;}
+   button.Vizualizar_Dest a {
+     font-size: 11px;
+     margin-top: -13%;
+   }
+   .contInfo_form {margin-top: -18%;}
+   p.textIInfo {font-size: 11px;}
+   .footerFilhares {
+      top: -188px;
+      left: 92px;
+    }
+    .footerContacto {
+      left: 201px;
+      top: -379px;
+    }
+    blockquote.blockquote.text-center.text-light {
+      margin: -145% 0% auto 0;
+      font-size: 9px;
+    }
+ /*Sobr_page*/
+   .menuVertical {
+     font-size: 11px;
+     width: 106px;
+     margin-left: -2%;
+    }
+   p.textEstorial {font-size: 11px;}
+   ul.boxMorad, p.textBox_morada {font-size: 10px;}
+   b.titleBox_morada {font-size: 13px;}
+   a.itemMenu_vert {width: 90px;}
+   .scrollspySite {
+      width: 207px;
+      margin-top: -67%;
+    }
+   .contInfo_form {margin-top: 83%;}
+}
+@media(max-width:291px){
+ /*Home_page*/
+    img.redSocial_top {width: 16px;}
+    img.Logo {
+      width: 50px;
+      margin: -32% 0% 0% -15%;
+    }
+    .titleLogo p span span a {font-size: 12px;}
+    .slogam {font-size: 8px;}
+    .titleLogo, .slogam {
+      left: 15%;
+      margin-top: -7%;
+   }
+   div#carouselSite {margin-top: 6%;}
+   div#navbarSite a.nav-link {font-size: 12px;}
+   .carousel-caption.d-md-block {
+      top: 76%;
+      height: 30%;
+    }
+   h1.titleSlide_public {
+     font-size: 12px;
+     margin-top: -1%;
+   }
+   p.textSlide_public {font-size: 9px;}
+   samp.titleSlide {font-size: 12px;}
+   p.textSlide {font-size: 11px;}
+   p.textIInfo {
+     font-size: 10px;
+     text-indent: 13px;
+   }
+   .form-group.col-sm-6 {font-size: 12px;}
+   input#inputNome,input#inputEmail
+   ,input#inputTelefone,input#inputEndereço
+   ,input#inputAssunto {height: 22px;}
+   textarea#rMensg {height: 75px;}
+   button.formEnviar {
+      font-size: 12px;
+      margin-top: -3%;
+    }
+    .modelDest {
+     width: 142px;
+     height: 247px;
+    }
+   .boxMenu_Dest {margin: 0 63px 0 -10px;}
+   .boxDest_PN h2.nome, .boxDest_PN .details p {font-size: 12px;}
+   .Box_Dest {margin: -164% 0 35% -8%;}
+   h1.titleInfo {font-size: 14px;}
+   .contInfo_form {margin-top: -28%;}
+   a.list-group-item.list-group-item-action.list-group-item-primary {font-size: 10px;}
+   p.roda, .footConten p {font-size: 9px;}
+   h3.text-center {font-size: 15px;}
+   .footerFilhares {
+      top: -160px;
+      left: 69px;
+    }
+    blockquote.blockquote.text-center.text-light {
+      margin: -158% 0% auto 0;
+      font-size: 9px;
+   }
+   .footerContacto {
+     left: 169px;
+     top: -346px;
+   }
+   .item-a .box {
+     width: 100%;
+     height: 327px;
+     background-color: azure;
+     border-radius: 4px;
+    }
+   .box{
+     width: 94%;
+     height: 500px;
+    }
+    .lSSlideWrapper.usingCss {
+      margin: 0 0 0 -35px;
+      padding: 0;
+      max-width: 113%;
+   }
+   .lSAction > .lSPrev {
+     left: 42px;
+     top: 54%;
+    }
+   .lSAction > .lSNext {
+     right: 18px;
+     top: 54%;
+    }
+    button.Vizualizar {
+      font-size: 14px;
+      margin-top: -6%;
+    }
+ 
+}
+@media(max-width:280px){
+ /*Home_page*/
+    img.redSocial_top {width: 16px;}
+    img.Logo {
+      width: 50px;
+      margin: -32% 0% 0% -15%;
+    }
+    .cardCarrinh_box {
+     margin-top: -33%;
+     left: -17%;
+    }
+    span.totalCompra {
+     margin-top: -28%;
+     left: 70%;
+    }
+    .titleLogo p span span a {font-size: 12px;}
+    .slogam {font-size: 8px;}
+    .titleLogo, .slogam {
+      left: 15%;
+      margin-top: -7%;
+   }
+   div#carouselSite {margin-top: 6%;}
+   div#navbarSite a.nav-link {font-size: 12px;}
+   .carousel-caption.d-md-block {
+      top: 76%;
+      height: 30%;
+    }
+   h1.titleSlide_public {
+     font-size: 12px;
+     margin-top: -1%;
+   }
+   p.textSlide_public {font-size: 9px;}
+   samp.titleSlide {font-size: 12px;}
+   p.textSlide {font-size: 11px;}
+   p.textIInfo {
+     font-size: 10px;
+     text-indent: 13px;
+   }
+   .form-group.col-sm-6 {font-size: 12px;}
+   input#inputNome,input#inputEmail
+   ,input#inputTelefone,input#inputEndereço
+   ,input#inputAssunto {height: 22px;}
+   textarea#rMensg {height: 75px;}
+   button.formEnviar {
+      font-size: 12px;
+      margin-top: -3%;
+    }
+    .modelDest {
+     width: 142px;
+     height: 247px;
+    }
+   .boxMenu_Dest {margin: 0 63px 0 -10px;}
+   .boxDest_PN h2.nome, .boxDest_PN .details p {font-size: 12px;}
+   .Box_Dest {margin: -164% 0 35% -8%;}
+   h1.titleInfo {font-size: 14px;}
+   .contInfo_form {margin-top: -28%;}
+   a.list-group-item.list-group-item-action.list-group-item-primary {font-size: 10px;}
+   p.roda, .footConten p {font-size: 9px;}
+   h3.text-center {font-size: 15px;}
+   .footerFilhares {
+      top: -160px;
+      left: 69px;
+    }
+    blockquote.blockquote.text-center.text-light {
+      margin: -158% 0% auto 0;
+      font-size: 9px;
+   }
+   .footerContacto {
+     left: 169px;
+     top: -346px;
+   }
+   .item-a .box {
+     width: 100%;
+     height: 327px;
+     background-color: azure;
+     border-radius: 4px;
+    }
+   .box{
+     width: 94%;
+     height: 500px;
+    }
+    .lSSlideWrapper.usingCss {
+      margin: 0 0 0 -35px;
+      padding: 0;
+      max-width: 113%;
+   }
+   .lSAction > .lSPrev {
+     left: 42px;
+     top: 54%;
+    }
+   .lSAction > .lSNext {
+     right: 18px;
+     top: 54%;
+    }
+    button.Vizualizar {
+      font-size: 14px;
+      margin-top: -6%;
+    }
+ /*Sobr_page*/
+   .scrollspySite {
+     margin-top: -79%;
+     margin-left: 3%;
+     width: 181px;
+    }
+   .textEstorial img#logoImg {width: 55px;}
+   .textEstorial img#politEntrega {
+     width: 58px;
+     margin-left: 7px;
+     margin-right: 0%;
+    }
+   a.itemMenu_vert {width: 85px;}
+   p.textEstorial {font-size: 10px;}
+   .menuVertical {margin-left: -5%;}
+   .contInfo_form {margin-top: 82%;}
+}
+@media(max-width:240px){
+ /*Home_page*/
+   .carousel-item img {height: 142px;}
+   .carousel-inner {height: 142px;}
+   .contacto {font-size: 7px;}
+   .Telefone {margin: -1% -1% 0 0;}
+   .titleLogo p span span a {font-size: 9px;}
+   .slogam {font-size: 7px;}
+   .slogam p {margin-top: -3%;}
+   .lSAction > .lSNext{right: 9px;}
+   .boxMenu_Dest {margin: 0 52px 0 -7px;}
+   .boxDest_PN h2.nome, .boxDest_PN .details p {font-size: 10px;}
+   button.Vizualizar_Dest a {
+     font-size: 9px;
+     margin: -8%;
+    }
+   .modelDest {
+      width: 122px;
+      height: 227px;
+   }
+   .cardCarrinh_box {
+     margin-top: -27%;
+     left: -31%;
+   }
+    span.totalCompra {
+     margin-top: -22%;
+     left: 56%;
+   }
+   p.textIInfo {font-size: 9px;}
+   img.redSocial_top {width: 15px;}
+   .contInfo_form {margin-top: -42%;}
+   input#inputNome,input#inputEmail
+   ,input#inputTelefone,input#inputEndereço
+   ,input#inputAssunto {font-size: 11px;}
+   h3.text-center {font-size: 12px;}
+   p.roda, .footConten p {font-size: 7px;}
+   .footerFilhares {
+     top: -145px;
+     left: 64px;
+   }
+   .footerContacto {
+     left: 148px;
+     top: -326px;
+   }
+   img#redSocial {
+      margin-top: -50%;
+      width: 18px;
+   }
+   blockquote.blockquote.text-center.text-light {
+     margin: -186% 0% auto 0;
+     font-size: 7px;
+   }
+   .footerMenu {top: 10px;}
+ /*Sobr_page*/
+   h1.Intropag {
+     font-size: 13px;
+     margin-top: -15%;
+    }
+    a.itemMenu_vert {width: 75px;}
+    nav.itemMenu_vert {margin-left: -17%;}
+   .menuVertical {
+     margin-left: -6%;
+     margin-top: -10%;
+     font-size: 9px;
+     width: 88px;
+   }
+   p.textEstorial {font-size: 7px;}
+   h4#item1-1, h5#item1-2, h5#item1-3 {font-size: 0.7rem;}
+   b.titleBox_morada {font-size: 12px;}
+   .textEstorial img#logoImg {
+     margin-left: 2px;
+     margin-right: -3%;
+     width: 50px;
+    }
+    .scrollspySite {
+     margin-top: -89%;
+     margin-left: 3%;
+     width: 151px;
+    }
+    .ContacMorad {margin-left: 0%;}
+    .contInfo_form {margin-top: 79%;}
+}

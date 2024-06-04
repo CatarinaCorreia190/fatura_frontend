@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamentos</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body onload="loadData()">
+    <header>
+       
+        <div class="#">Dashboard</div>
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <div class="input-group">
+              <input  type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar..."
+              aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                  <button class="btn btn-color" type="button">
+                      <i class="fas fa-search fa-sm"></i>
+                  </button>
+              </div>
+          <a href="#">
+              <img src="logo.png"  style="width:40px;" class="rounded-pill"> 
+          </a>
+          </div>
+      </form>
+
+    </header>
+    <aside>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="logo.png" style="width:40px;" > 
+            </a>
+          </div>
+         <ul>
+           <li><a href="index.html">Overview</a></li>
+            <li><a href="clientes.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
+            <li><a href="produtos.html"><i class="fa-solid fa-basket-shopping"></i>Produtos</a></li>
+            <li><a href="faturas.html"><i class="fa-solid fa-file-invoice"></i>Faturas</a></li>
+            <li><a href="Pagamentos.html"><i class="fa-solid fa-money-check"></i>Pagamentos</a></li>
+            <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>login out</li></p>
+        </ul>
+    </aside>
+    <main>
+      
+    <h1>Produtos</h1>
+    <div class="table-responsive">
+      <button type="button" class="btn bg-btn-color" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-top: 20px; height: 50px;  background-color: #52182E; width: 100%; color: #fff;">
+        Adicionar Produto
+      </button>
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" style="color: #52182E;">Adicionar Produto</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="produtoForm">
+      
+            <!-- Modal body -->
+              <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
+                    <div class="form-group">
+                        <label for="productName">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome do Produto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Descrição</label>
+                        <textarea class="form-control" id="descricao" rows="3" placeholder="Descrição do Produto" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Preço</label>
+                        <input type="number" class="form-control" id="preco" placeholder="Preço do Produto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productRegime">Regime</label>
+                        <select class="form-control" id="regime" required>
+                          <option value="Regime Geral">Regime Geral</option>
+                          <option value="Exento">Exento</option>
+                        </select>
+                    </div>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-bg-color" data-bs-dismiss="modal" style="background-color: #52182E; color: #fff;">Adicionar</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModalQty">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" style="color: #52182E;">Adicionar Quantidade ao Produto</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="produtoFormQty">
+      
+              <!-- Modal body -->
+              <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
+                <div class="form-group" style="opacity: 1;">
+                  <label for="productId">ID Produto</label>
+                  <input type="text" class="form-control" id="productId" required readonly>
+                </div>
+                <div class="form-group">
+                  <label for="qty">Preço</label>
+                  <input type="number" class="form-control" id="qty" placeholder="Quantidade" required>
+                </div>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-bg-color" data-bs-dismiss="modal"
+                  style="background-color: #52182E; color: #fff;">Adicionar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <table class="table table-bordered table-hover" id="productTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Regime</th>
+            <th>Criado em</th>
+            <th>Atualizado em</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- Os dados dos produtos serão inseridos aqui -->
+          <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+        
+      </table>
+    </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script defer>
+      const formDOM = document.querySelector('#produtoForm')
+      const formDOMQty = document.querySelector('#produtoFormQty')
+      const inputNome = document.querySelector('#nome')
+      const inputDescricao = document.querySelector('#descricao')
+      const inputPreco = document.querySelector('#preco')
+      const inputRegime = document.querySelector('#regime')
+      const inputProductId = document.querySelector('#productId')
+      const inputQty = document.querySelector('#qty')
+      const table = document.getElementById("productTable");
+      const tableBody = document.getElementById("productTableBody");
+
+      formDOM.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nome = inputNome.value
+        const descricao = inputDescricao.value
+        const preco = inputPreco.value
+        const regime = inputRegime.value
+
+        try {
+          const produto = await axios.post('https://factura-h7s5.onrender.com/api/produto', { nome, descricao, preco, regime });
+          const newRow = table.insertRow();
+          console.log(produto.data)
+          tableBody.innerHTML += `<tr>
+                  <td>#</td>
+                  <td>${nome}</td>
+                  <td>${descricao}</td>
+                  <td>${preco} AOA</td>
+                  <td>${produto.data.idProduto._quantidade}</td>
+                  <td>${regime}</td>
+                  <td>${produto.data.idProduto._criadoEm}</td>
+                  <td>${produto.data.idProduto._actualizadoEm}</td>
+                  <td class="d-flex justify-content-center ">
+              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-edit"></i>
+              </a>
+  
+              <a href="#" class="btn btn-primary btn-circle btn-sm" data-bs-toggle="modal" data-bs-target="#myModalQty" onclick="setProductId('${produto.data.idProduto._idProduto}')">
+                  <i class="fas fa-plus"></i>
+              </a>
+          </td>
+              </tr>`
+          inputNome.value = "";
+          inputDescricao.value = "";
+          inputPreco.value = "";
+          inputRegime.value = "";
+        } catch (error) {
+          console.log(error)
+        }
+      })
+
+      formDOMQty.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const idProduto = inputProductId.value
+          const quantidade = inputQty.value
+
+          try {
+            const produto = await axios.patch(`https://factura-h7s5.onrender.com/api/produto/addquantidade/${idProduto}`, { quantidade });
+            inputProductId.value = "";
+            inputQty.value = "";
+            await loadData();
+          } catch (error) {
+            console.log(error)
+          }
+        })
+    </script>
+    
+    <script defer>
+      async function loadData() {
+        tableBody.innerHTML = "";
+        try {
+          const produtos = await axios.get('https://factura-h7s5.onrender.com/api/produto');
+          produtos.data.forEach(element => {
+            tableBody.innerHTML += `<tr>
+                    <td>#</td>
+                    <td>${element._nome}</td>
+                    <td>${element._descricao}</td>
+                    <td>${element._preco} AOA</td>
+                    <td>${element._quantidade}</td>
+                    <td>${element._regime}</td>
+                    <td>${element._criadoEm}</td>
+                    <td>${element._actualizadoEm}</td>
+                    <td class="d-flex justify-content-center ">
+              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-edit"></i>
+              </a>
+              <span> </span>
+  
+              <a href="#" class="btn btn-primary btn-circle btn-sm" data-bs-toggle="modal" data-bs-target="#myModalQty" onclick="setProductId('${element._idProduto}')">
+                  <i class="fas fa-plus"></i>
+              </a>
+          </td>
+                </tr>`
+          });
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+      function setProductId(id) {
+        document.getElementById("productId").value = id;
+      }
+    </script>
+</body>
+</html>

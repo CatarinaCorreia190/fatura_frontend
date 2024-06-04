@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factura</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body onload="loadData()">
+  <header>
+
+    <div class="#">Dashboard</div>
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+      <div class="input-group">
+        <input type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar..." aria-label="Search"
+          aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-color" type="button">
+            <i class="fas fa-search fa-sm"></i>
+          </button>
+        </div>
+        <a href="#">
+          <img src="logo.png" style="width:40px;" class="rounded-pill">
+        </a>
+      </div>
+    </form>
+  </header>
+  <aside>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="logo.png" style="width:40px;">
+      </a>
+    </div>
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="clientes.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
+      <li><a href="produtos.html"><i class="fa-solid fa-basket-shopping"></i>Produtos</a></li>
+      <li><a href="faturas.html"><i class="fa-solid fa-file-invoice"></i>Faturas</a></li>
+      <li><a href="Pagamentos.html"><i class="fa-solid fa-money-check"></i>Pagamentos</a></li>
+      <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>login out</li>
+      </p>
+    </ul>
+  </aside>
+  <main>
+    <h1>Fatura</h1>
+
+    <button type="button" class="btn bg-btn-color" data-bs-toggle="modal" data-bs-target="#myModal"
+      style="margin-top: 20px; height: 50px;  background-color: #52182E; width: 100%; color: #fff;">
+      Adicionar Fatura
+    </button>
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title " style="color: #52182E;">Adicionar Fatura</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <form id="invoiceForm">
+            <!-- Modal body -->
+            <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
+              <div class="form-group">
+                <label for="idCliente">Cliente</label>
+                <select class="form-control" id="clientes" required></select>
+                <div class="form-group">
+                  <div id="invoiceItems">
+                    <label>Itens da Fatura</label>
+                    <table class="table table-bordered table-hover" id="faturaTable">
+                      <thead>
+                        <tr>
+                          <th>Nome do Item</th>
+                          <th>Quantidade</th>
+                          <th>Preço</th>
+                        </tr>
+                      </thead>
+                      <tbody id="faturaItemsTableBody">
+                        <!-- Adicione mais linhas conforme necessário -->
+                      </tbody>
+
+
+                    </table>
+                    <div id="ItemButtons" class="col-md-12" style="display: inline-block;">
+                      <div class="col-md-4">
+                        <select class="form-control" id="produtos" required></select>
+                      </div>
+                      <div class="col-md-4">
+                        <input type="number" id="quantidade" class="form-control" placeholder="Quantidade" required>
+                      </div>
+                      <div class="col-md-4">
+                        <button type="button" class="btn btn-color"
+                          style="width: 150px; background-color:#CD294C; color: #fff;" onclick="addItem()">Adicionar
+                          Item</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-bg-color" data-bs-dismiss="modal"
+                style="background-color: #52182E; color: #fff;" onclick="addInvoice()">Adicionar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered table-hover" id="faturaTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nº Fatura</th>
+          <th>Data Emissão</th>
+          <th>Cliente</th>
+          <th>Estado</th>
+          <th>Total</th>
+          <th>Criado Em</th>
+          <th>Atualizado Em</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="faturaTableBody">
+        <!-- Os dados dos produtos serão inseridos aqui -->
+        <!-- Adicione mais linhas conforme necessário -->
+      </tbody>
+    </table>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script defer>
+    const formDOM = document.querySelector('#invoiceForm')
+    const inputClientes = document.querySelector('#clientes')
+    const inputProdutos = document.querySelector('#produtos')
+    const inputQuantidade = document.querySelector('#quantidade')
+    const tableItemsBody = document.getElementById("faturaItemsTableBody");
+    const table = document.getElementById("faturaTable");
+    const tableBody = document.getElementById("faturaTableBody");
+    let produtos = [];
+
+    async function addInvoice() {
+      console.log(produtos);
+      const idCliente = inputClientes.value
+      console.log(idCliente);
+      const items = produtos;
+
+      try {
+        const fatura = await axios.post('https://factura-h7s5.onrender.com/api/fatura', { idCliente, items });
+        console.log(fatura.data);
+        tableBody.innerHTML += `<tr>
+                  <td>#</td>
+                  <td>${fatura.data._idFatura}</td>
+                  <td>${fatura.data._dataEmissao}</td>
+                  <td>****************</td>
+                  <td>${fatura.data._estado}</td>
+                  <td>********</td>
+                  <td>${fatura.data._criadoEm}</td>
+                  <td>${fatura.data._actualizadoEm}</td>
+                  <td class="d-flex justify-content-center ">
+              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-edit"></i>
+              </a>
+  
+              <a href="#" class="btn btn-primary btn-circle btn-sm" data-bs-toggle="modal" data-bs-target="#myModalQty">
+                  <i class="fas fa-plus"></i>
+              </a>
+          </td>
+              </tr>`
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+  </script>
+
+  <script defer>
+    async function loadData() {
+      inputClientes.innerHTML = '';
+      try {
+        const clientes = await axios.get('https://factura-h7s5.onrender.com/api/cliente');
+        clientes.data.forEach(element => {
+          inputClientes.innerHTML += `<option value="${element._idCliente}">${element._nome}</option>`
+        });
+        const produtos = await axios.get('https://factura-h7s5.onrender.com/api/produto');
+        produtos.data.forEach(element => {
+          inputProdutos.innerHTML += `<option value="${element._idProduto}_${element._preco}_${element._nome}">${element._nome}</option>`
+        });
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    function setProductId(id) {
+      document.getElementById("productId").value = id;
+    }
+
+    async function addItem() {
+      const [idProduto, preco, nome] = inputProdutos.value.split('_');
+      produtos.push({
+        idProduto: idProduto,
+        quantidade: inputQuantidade.value,
+        imposto: 7
+      })
+      tableItemsBody.innerHTML += `<tr>
+            <td>${nome}</td>
+            <td>${inputQuantidade.value}</td>
+            <td>${preco}</td>
+            <td class="d-flex justify-content-center ">
+                              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+                                  <i class="fas fa-edit"></i>
+                              </a>
+                  
+                              <a href="#" class="btn btn-danger btn-circle btn-sm">
+                                  <i class="fas fa-trash"></i>
+                              </a>
+                          </td>
+        </tr>`
+      inputQuantidade.value = '';
+    }
+  </script>
+</body>
+
+</html>

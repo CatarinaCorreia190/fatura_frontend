@@ -1,0 +1,200 @@
+body{
+    background-color: #eee;
+}
+/* ---------/ interface /-------------*/
+ .interface{
+     background-color: #fff;
+     border-radius: 6px;
+     margin: auto auto 2% auto;
+     width: 88%;
+   }
+/* ---------/ topCabecalho /-------------*/
+ img.Logo {width: 87px;}
+ .LogoTipo {margin: auto;}
+/* ---------/ Formul /-------------*/
+ legend.titleSect{
+     font-weight: 400;
+     line-height: 1.1;
+     font-size: 21px;
+     font-family: inherit;
+     padding-bottom: 1%;
+     border-bottom: 2px solid #f9b306;
+   }
+ .titleSectCent{text-align: center;}
+ fieldset.cabecalho,fieldset.DadosCliente,fieldset.ListEncomenda {
+     margin-left: 4%;
+     margin-right: 4%;
+    }
+ label {
+     font-weight: 700;
+     font-family: 'Open Sans', sans-serif !important;
+     font-size: 13px;
+    }
+ .form-group.col-sm-6 {float: left;}
+ /* ---------/ cabecalho /-------------*/
+     p.textCabec {
+         font-size: 13px !important;
+         font-family: 'Open Sans', sans-serif !important;
+       }
+ /* ---------/ Corpo /-------------*/
+     /* ---------/ DadosCliente /-------------*/
+         input#cNome {
+             margin-top: -3%;
+             margin-left: 7%;
+             width: 95%;
+            }
+         input#cTelef {
+             margin-top: -8%;
+             margin-left: 14%;
+             width: 91%;
+            }
+         input#cEmail {
+             margin-top: -8%;
+             margin-left: 12.3%;
+             width: 91%;
+           }
+     /* ---------/ Morada /-------------*/
+         fieldset.Morad {
+             margin-left: 4%;
+             width: 44%;
+            }
+         .mapa {
+             border: 1px solid;
+             text-align: center;
+             height: 200px;
+             overflow-x: hidden;
+             overflow-y: auto;
+            }
+     /* ---------/ Serviço Entrega /-------------*/
+         fieldset.ServicoEncomenda {
+             float: right;
+             /* margin-top: 6.7%; */
+             margin-right: 4%;
+             width: 44%;
+            }
+     /* ---------/ Inf. Encomenda /-------------*/
+         fieldset.InfEncomenda {
+             float: right;
+             margin-top: 9.7%;
+             margin-right: -44%;
+             width: 44%;
+            }
+         input#cIdEncomenda,input#cItensCarrinho,input#cValorEncomenda,input#cValorEntrega,input#cValorApagar{
+             font-weight: 700;
+             font-size: 20px;
+             text-align: right;
+             float: right;
+             border: none;
+             margin: -1% 10% auto auto;
+             background-color: transparent;
+           }
+         span {
+             float: left;
+             font: normal normal normal 13px/1.79em raleway,sans-serif;
+             font-weight: 700;
+            }
+         .unidade {
+             float: right;
+             margin-top: -6%;
+             margin-right: -57%;
+             font-weight: 700;
+             font-size: 20px;
+            }
+     /* ---------/ Lista Encomenda /-------------*/
+         fieldset.ListEncomenda {
+             margin-top: 5.5%;
+             width: 44%;
+            }
+         optgroup.NomeProd {
+             text-align: left;
+             width: 50%;
+             margin-left: -3%;
+            }
+         .NomeProd option {width: 160%;}
+         optgroup.PrecoProd {
+             float: right;
+             text-align: right;
+             margin-top: -63.5%;
+             width: 50.5%;
+            }
+         .PrecoProd option {
+             width: 59%;
+             float: right;
+            }
+     /* ---------/ Modo Pagamento /-------------*/
+         fieldset.ModoPagamento {
+             float: right;
+             width: 44%;
+             margin-right: -44%;
+             margin-top: 39%;
+            }
+         label.labelMod {
+             margin-top: 5%;
+             margin-left: -4%;
+            }
+         input#cNdaconta,input#Passw{
+             margin-top: -13%;
+             margin-left: 27%;
+            }
+         a.button.vibrate {
+             display: inline-block;
+             padding: 10px 30px;
+             border-radius: 4px;
+             background-color: #f50300;
+             text-align: center;
+             color: #ffffff;
+             margin: 7px 1px 0 0px;
+             font: 700 18px/100% Arial, Helvetica, sans-serif;
+             border-color: #f50300;
+             transition: background-color 0.4s ease 0s;
+             -webkit-transition: background-color 1s;
+             -moz-transition: background-color 1s;
+             -o-transition: background-color 1s;
+             -ms-transition: background-color 1s;
+            }
+         .buttonBox{float: right;}
+         a.button.vibrate:hover {
+             color: #f50300;
+             background-color: transparent;
+             text-decoration: none;
+             border: 1px solid #f50300;
+            }
+            table.table.table-bordered.table-striped.listProd {
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin: -2% 0% 0% 0%;
+}
+td.desciten_boxTot {
+    font-size: 90%;
+    color: #bd4147;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+}
+td.desciten_boxPrec {
+    font-size: 90%;
+    color: #f39507;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+}
+td.desciten_boxNome {
+    font-size: 90%;
+    color: #714143;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+}
+span.qnt {
+    font-size: 75%;
+    font-weight: 700;
+    margin: 0% 0% 0% 32%;
+    color: #fff;
+    background-color: #bd4147;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    font: normal normal normal 13px/1.79em raleway,sans-serif;
+    border-radius: 50%;
+    display: inline-block;
+    width: 20px;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamentos</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <link rel="stylesheet" href="fonta-wesome/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+</head>
+<body>
+    <header>
+       
+        <div class="#">Dashboard</div>
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input  type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar..."
+                    aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-color" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                <a href="#">
+                    <img src="logo.png"  style="width:40px;" class="rounded-pill"> 
+                </a>
+                </div>
+            </form>
+        
+    </header>
+    <aside>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="logo.png" style="width:40px;" > 
+            </a>
+          </div>
+        <ul>
+           <li><a href="index.html">Overview</a></li>
+            <li><a href="clientes.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
+            <li><a href="produtos.html"><i class="fa-solid fa-basket-shopping"></i>Produtos</a></li>
+            <li><a href="faturas.html"><i class="fa-solid fa-file-invoice"></i>Faturas</a></li>
+            <li><a href="Pagamentos.html"><i class="fa-solid fa-money-check"></i>Pagamentos</a></li>
+            <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>login out</li></p>
+        </ul>
+    </aside>
+    <main>
+        <h1>Pagamentos </h1>
+        <div class="table-responsive">
+            <button type="button" class="btn bg-btn-color" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-top: 20px; height: 50px;  background-color: #52182E; width: 100%; color: #fff;">
+              Adicionar Pagamento
+            </button>
+            <div class="modal fade" id="myModal">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+            
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title" style="color: #52182E;">Adicionar Pagamento</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+            
+                  <!-- Modal body -->
+                    <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
+                      <form id="productForm">
+                          <div class="form-group">
+                              <label for="productName">ID da Factura</label>
+                              <input type="text" class="form-control" id="productName" placeholder="Nome do Produto" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="productDescription">Montante a Pagar</label>
+                              <textarea class="form-control" id="productDescription" rows="3" placeholder="Descrição do Produto" required></textarea>
+                          </div>
+                        </form>
+                  </div>
+            
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-bg-color" data-bs-dismiss="modal" style="background-color: #52182E; color: #fff;">Adicionar</button>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID da Factura</th>
+              <th>Montante Pago</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Os dados dos produtos serão inseridos aqui -->
+            <tr>
+              <td>1</td>
+              <td>2000</td>
+              <td class="d-flex justify-content-center ">
+                <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-edit"></i>
+                </a>
+    
+                <a href="#" class="btn btn-danger btn-circle btn-sm">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>30000</td>
+              <td class="d-flex justify-content-center ">
+                <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-edit"></i>
+                </a>
+    
+                <a href="#" class="btn btn-danger btn-circle btn-sm">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+          </tbody>
+        </table>
+    
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

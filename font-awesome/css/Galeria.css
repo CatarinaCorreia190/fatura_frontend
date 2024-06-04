@@ -1,0 +1,192 @@
+nav.boxGaleria {margin: 9% 5% 0 5%;}
+.tituloPag {
+    color: #ec971d;
+    font: normal normal normal 14px/1.41em poppins-extralight,poppins,sans-serif;
+    float: right;
+    margin-top: -3%;
+}
+p.textGaleria {
+    text-indent: 56px;
+    margin-top: 0%;
+    font: normal normal normal 16px/1.875em raleway,sans-serif;
+    color: #802011;
+    text-align: justify;
+    margin-bottom: 6%;
+    border-top: 1px solid #ec971d4d;
+}
+.containerGaleria {
+    margin: 0 2% 0 2%;
+
+}
+
+section.Sec_videosApresentacao {
+ 
+ width: 505px;
+ height: 360px;
+}
+video#filme {
+ background-color: black;
+ height: 362px;
+ width: 100%;
+ border: 1px solid;
+ max-height: 364px;
+ margin-top: 0%;
+}
+
+
+
+section.Sec_imgPublicdade {
+ 
+ float: right;
+ width: 456px;
+ margin: -37.2% 0 0 0;
+ height: 535px;
+}
+.carousel-item img {
+ height: 266px;
+ width: 100%;
+}
+ol.carousel-indicators {display: none;}
+.carousel-item img {
+ height: 266px;
+ width: 100%;
+}
+.carousel-inner {margin: 0% 0 0 0px;}
+
+
+
+
+
+img.public {height: 268px;}
+.imgArtig_Publicidade {
+ 
+ width: 100%;
+}
+.imgPessoa_PublicidadeL {float: left;}
+.imgPessoa_PublicidadeR {float: right;}
+.imgPessoa_PublicidadeL,.imgPessoa_PublicidadeR {
+    
+    width: 49%;
+    margin-top: 2%;
+    height: 50%;
+}
+
+
+
+
+section.Sec_imgCliet {
+ 
+ width: 505px;
+ height: 500px;
+ margin-top: 2%;
+}
+.imgCliet_estabL, .imgCliet_estabR {
+ 
+ width: 49%;
+ height: 50%;
+ margin-bottom: 2%;
+}
+.imgCliet_estabL{float: left;}
+.imgCliet_estabR{float: right;}
+
+.container .box{
+  position: relative;
+  width: 300px
+  height:300px;
+ 
+  margin: 10px;  
+}
+img.Clientes {height: 250px;}
+
+
+
+
+section.Sec_imgMidea_Atividade {
+ float: right;
+ margin-top: -350px;
+ width: 245px;
+ height: 431px;
+}
+.Midea_Atividade{ 
+ height: 69%;
+ margin-bottom: 3%;
+}
+video#mideaAtivid {
+ background-color: #080808;
+ height: 286px;
+ width: 100%;
+ border: 1px solid;
+ max-height: 364px;
+ margin-top: 0%;
+}
+
+
+section.Sec_img_Atividade {
+ 
+ float: right;
+ margin-top: -71.1%;
+ margin-right: 25.7%;
+ width: 207px;
+ height: 339px;
+}
+
+.img_Atividade {height: 339px;}
+img.activid {height: 339px;}
+
+.contGaleria.Sec_imgMidea_Atividade .boxGaleria_img.img_Atividade .imgBox img.activid {
+    height: 310px;
+}
+img.funcio {height: 264px;}
+section.Sec_imgFuncionario {
+ 
+ float: left;
+ width: 718px;
+ height: 337px;
+}
+.ImgEstab_Funcio {
+
+    float: right;
+    width: 55%;
+    height: 337px;
+    margin-top: -36%;
+}
+
+
+
+.imgFuncion_estab {
+ 
+ width: 44%;
+ height: 250px;
+ margin-bottom: 1%;
+}
+
+
+
+
+
+.boxGaleria_img .imgBox{
+  position: relative;
+  overflow: hidden;
+}
+.boxGaleria_img .imgBox img{
+  max-width: 100%;
+  transition:transform 2s;
+}
+.contGaleria .boxGaleria_img :hover.imgBox img{
+  transform: scale(1.2);
+}
+
+
+
+h1.titledaSeccao {
+    text-align: center;
+    font-size: 18px;
+    color: #9E9E9E;
+    margin: 0% 0 0 0%;
+}
+h1.titledaSub_Seccao {
+    text-align: center;
+    font-size: 13px;
+    color: #5f9ea0;
+    margin: 0% 0 0 0%;
+}
