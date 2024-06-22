@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamentos</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
 
 </head>
+
 <body onload="loadData()">
-    <header>
-       
-        <div class="#">Dashboard</div>
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-          <div class="input-group">
-              <input  type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar..."
-              aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                  <button class="btn btn-color" type="button">
-                      <i class="fas fa-search fa-sm"></i>
-                  </button>
-              </div>
-          <a href="#">
-              <img src="logo.png"  style="width:40px;" class="rounded-pill"> 
-          </a>
-          </div>
-      </form>
-        
-    </header>
-    <aside>
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="logo.png" style="width:40px;" > 
-            </a>
-          </div>
-        <ul>
-           <li><a href="index.html">Overview</a></li>
-            <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
-            <li><a href="produtos.html"><i class="fas fa-basket-shopping"></i> Produtos</a></li>
-            <li><a href="faturas.html"><i class="fas fa-file-invoice"></i> Faturas</a></li>
-            <li><a href="Pagamentos.html"><i class="fas fa-money-check"></i> Pagamentos</a></li>
-            <li><a href="#"><i class="fas fa-arrow-right-from-bracket"></i> login out</li></p>
-        </ul>
-    </aside>
-    <main>
+  <header>
+
+    <div class="#">Dashboard</div>
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+      <div class="input-group">
+        <input id="input-search" type="text" class="form-control bg-light border-0 small " placeholder="Pesquisar..." aria-label="Search"
+          aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-color btn-seach" type="button">
+            <i class="fas fa-search fa-sm"></i>
+          </button>
+        </div>
+        <a href="#">
+          <img src="logo.png" style="width:40px;" class="rounded-pill">
+        </a>
+      </div>
+    </form>
+
+  </header>
+  <aside>
+    </div>
+    <ul>
+      <li><a href="dashboard.html"><i class="fa fa-th-large" aria-hidden="true"></i>Overview</a></li>
+      <li><a href="clientes.html"><i class="fa fa-users"></i>Clientes</a></li>
+      <li><a href="produtos.html"><i class="fa fa-shopping-basket "></i>Produtos</a></li>
+      <li><a href="faturas.html"><i class="fa fa-file-invoice  "></i>Faturas</a></li>
+      <li><a href="Pagamentos.html"><i class="fa fa-money-check "></i>Pagamentos</a></li>
+      <li><a href="AddUser.html"><i class="fa fa-users"></i>Adicionar User</a></li>
+      <li><a href="index.html">login out<i class="fa fa-sign-out logout" aria-hidden="true"></i></a></li>
+    </ul>
+  </aside>
+  <main>
     <h1>Clientes</h1>
-    <button type="button" class="btn bg-btn-color" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-top: 20px; height: 50px;  background-color: #52182E; width: 100%; color: #fff;">
+    <button type="button" class="btn bg-btn-color" data-bs-toggle="modal" data-bs-target="#myModal"
+      style="margin-top: 20px; height: 50px;  background-color: #52182E; width: 100%; color: #fff;">
       Adicionar Cliente
     </button>
     <div class="modal fade" id="myModal">
@@ -56,37 +56,84 @@
         <div class="modal-content">
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title" style="color: #52182E;" >Adicionar Cliente</h4>
+            <h4 class="modal-title" style="color: #52182E;">Adicionar Cliente</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <form id="clientForm">
+            <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
+
+              <div class="form-group">
+                <label for="nif">NIF</label>
+                <input type="text" class="form-control" id="nif" placeholder="NIF do Cliente" required>
+              </div>
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome do Cliente" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email do Cliente" required>
+              </div>
+              <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <textarea class="form-control" id="endereco" rows="3" placeholder="Endereço do Cliente"
+                  required></textarea>
+              </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-bg-color" data-bs-dismiss="modal"
+                style="background-color: #52182E; color: #fff;">Adicionar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="myModalEdit">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title" style="color: #52182E;">Editar Cliente</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
     
           <!-- Modal body -->
-          <form id="clientForm">
-            <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;" >
-              
-                <div class="form-group">
-                    <label for="nif">NIF</label>
-                    <input type="text" class="form-control" id="nif" placeholder="NIF do Cliente" required>
-                </div>
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Nome do Cliente" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email do Cliente" required>
-                </div>
-                <div class="form-group">
-                    <label for="endereco">Endereço</label>
-                    <textarea class="form-control" id="endereco" rows="3" placeholder="Endereço do Cliente" required></textarea>
-                </div>
-          </div>
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-bg-color" data-bs-dismiss="modal" style="background-color: #52182E; color: #fff;">Adicionar</button>
-          </div>
-        </form>
-          </div>
+          <form id="editClientForm">
+            <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
+
+              <div class="form-group" style="opacity: 0;">
+                <label for="nif">ID</label>
+                <input type="text" class="form-control" id="editID" placeholder="ID do Cliente" required>
+              </div>
+    
+              <div class="form-group">
+                <label for="nif">NIF</label>
+                <input type="text" class="form-control" id="editNif" placeholder="NIF do Cliente" required>
+              </div>
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="editNome" placeholder="Nome do Cliente" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="editEmail" placeholder="Email do Cliente" required>
+              </div>
+              <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <textarea class="form-control" id="editEndereco" rows="3" placeholder="Endereço do Cliente" required></textarea>
+              </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-bg-color" data-bs-dismiss="modal"
+                style="background-color: #52182E; color: #fff;">Salvar</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <table class="table table-bordered table-hover" id="clientTable">
@@ -99,7 +146,7 @@
           <th>Endereço</th>
           <th>Criado em</th>
           <th>Atualizado em</th>
-          <th></th>
+          <th>Acões</th>
         </tr>
       </thead>
       <tbody id="clientTableBody">
@@ -107,30 +154,61 @@
         <!-- Adicione mais linhas conforme necessário -->
       </tbody>
     </table>
-    </main>
+  </main>
 </body>
+</script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script defer>
-      const formDOM = document.querySelector('#clientForm')
-      const inputNif = document.querySelector('#nif')
-      const inputNome = document.querySelector('#nome')
-      const inputEmail = document.querySelector('#email')
-      const inputEndereco = document.querySelector('#endereco')
-      const table = document.getElementById("clientTable");
-      const tableBody = document.getElementById("clientTableBody");
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+  const busca = document.getElementById('input-search');
+  const clientTabela = document.getElementById('clientTableBody');
 
-      formDOM.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const nome = inputNome.value
-        const nif = inputNif.value
-        const email = inputEmail.value
-        const endereco = inputEndereco.value
+  busca.addEventListener('keyup', () => {
+    let expressao = busca.value.toLowerCase();
+    if(expressao.length < 2 && expressao.length > 0){
+      return;
+    }
+    let linhas = clientTabela.getElementsByTagName('tr');
 
-        try {
-          const cliente = await axios.post('https://factura-h7s5.onrender.com/api/cliente', { nome, nif, email, endereco});
-          const newRow = table.insertRow();
-          tableBody.innerHTML += `<tr>
+    for(let pos in listas){
+      if(true === isNaN(pos)){
+        continue;
+      }
+      let conteudoLinha = linhas[pos].innerHTML.toLowerCase();
+      if (true === conteudoLinha.includes(expressao)) {
+        linhas[pos].style.display = ' ';
+      }else{
+        linhas[pos].style.display = 'none';
+      }
+    }
+  });
+</script>
+<script defer>
+  const formDOM = document.querySelector('#clientForm')
+  const formEditDOM = document.querySelector('#editClientForm')
+  const inputEditId = document.querySelector('#editID')
+  const inputEditNif = document.querySelector('#editNif')
+  const inputEditNome = document.querySelector('#editNome')
+  const inputEditEmail = document.querySelector('#editEmail')
+  const inputEditEndereco = document.querySelector('#editEndereco')
+  const inputNif = document.querySelector('#nif')
+  const inputNome = document.querySelector('#nome')
+  const inputEmail = document.querySelector('#email')
+  const inputEndereco = document.querySelector('#endereco')
+  const table = document.getElementById("clientTable");
+  const tableBody = document.getElementById("clientTableBody");
+
+  formDOM.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const nome = inputNome.value
+    const nif = inputNif.value
+    const email = inputEmail.value
+    const endereco = inputEndereco.value
+
+    try {
+      const cliente = await axios.post('https://factura-h7s5.onrender.com/api/cliente', { nome, nif, email, endereco });
+      const newRow = table.insertRow();
+      tableBody.innerHTML += `<tr>
               <td>#</td>
               <td>${nif}</td>
               <td>${nome}</td>
@@ -139,31 +217,30 @@
               <td>${cliente.data._criadoEm}</td>
               <td>${cliente.data._actualizadoEm}</td>
               <td class="d-flex justify-content-center ">
-              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalEdit"
+              onclick="loadEditData('${cliente.data._idCliente}', '${nif}', '${nome}', '${email}', '${endereco}')"
+              >
                   <i class="fas fa-edit"></i>
-              </a>
-  
-              <a href="#" class="btn btn-danger btn-circle btn-sm">
-                  <i class="fas fa-trash"></i>
               </a>
           </td>
           </tr>`
-          inputNome.value = "";
-          inputNif.value = "";
-          inputEmail.value = "";
-          inputEndereco.value = "";
-        } catch (error) {
-          console.log(error)
-        }
-      })
-    </script>
+      inputNome.value = "";
+      inputNif.value = "";
+      inputEmail.value = "";
+      inputEndereco.value = "";
+    } catch (error) {
+      console.log(error)
+    }
+  })
+</script>
 
-    <script defer>
-      async function loadData() {
-        try {
-          const clientes = await axios.get('https://factura-h7s5.onrender.com/api/cliente');
-          clientes.data.forEach(element => {
-            tableBody.innerHTML += `<tr>
+<script defer>
+  async function loadData() {
+    try {
+      tableBody.innerHTML = "";
+      const clientes = await axios.get('https://factura-h7s5.onrender.com/api/cliente');
+      clientes.data.forEach(element => {
+        tableBody.innerHTML += `<tr>
                 <td>#</td>
                 <td>${element._nif}</td>
                 <td>${element._nome}</td>
@@ -172,21 +249,68 @@
                 <td>${element._criadoEm}</td>
                 <td>${element._actualizadoEm}</td>
                 <td class="d-flex justify-content-center ">
-              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalEdit"
+              onclick="loadEditData('${element._idCliente}', '${element._nif}', '${element._nome}', '${element._email}', '${element._endereco}')"
+              >
                   <i class="fas fa-edit"></i>
-              </a>
-  
-              <a href="#" class="btn btn-danger btn-circle btn-sm">
-                  <i class="fas fa-trash"></i>
               </a>
           </td>
             </tr>`
-          });
-        } catch (error) {
-          console.log(error)
-        }
-      }
-    </script>
+      });
+    } catch (error) {
+      console.log(error)
+    }
+  }
+</script>
 
-    
+<script>
+  function loadEditData(id, nif, nome, email, endereco) {
+    inputEditId.value = id
+    inputEditNif.value = nif
+    inputEditNome.value = nome
+    inputEditEmail.value = email
+    inputEditEndereco.value = endereco
+  }
+</script>
+
+<script defer>
+  formEditDOM.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = inputEditId.value
+    const nif = inputEditNif.value
+    const nome = inputEditNome.value
+    const email = inputEditEmail.value
+    const endereco = inputEditEndereco.value
+
+    console.log({
+      id, nif, nome, email,
+    })
+
+    try {
+      const cliente = await axios.patch(`https://factura-h7s5.onrender.com/api/cliente/${id}`, { nome, nif, email, endereco });
+      inputEditId.value = "";
+      inputEditNif.value = "";
+      inputEditNome.value = "";
+      inputEditEmail.value = "";
+      inputEditEndereco.value = "";
+      await loadData();
+    } catch (error) {
+      console.log(error)
+    }
+  })
+</script>
+
+<script>
+  var tabela = document.querySelector(".btn_delete");
+
+  tabela.addEventListener("click", function (event) {
+    var elementoClicado = event.target;
+    if (elementoClicado.classList.contains("btn_delete")) {
+      var celula = elementoClicado.parentNode;
+      var linha = celula.parentNode;
+      linha.remove();
+    }
+  })
+</script>
+
 </html>

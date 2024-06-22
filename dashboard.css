@@ -1,0 +1,90 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color:#e6d9dd;
+    text-decoration: none;
+}
+main{
+    background-color: #fff5f9;
+}
+	
+header {
+    background-color: #fff;
+    color: black;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+}
+
+header .logo {
+    font-size: 1.5em;
+}
+
+aside {
+    width: 219px;
+    padding: 1em;
+    background-color: #DBB3B3;
+    height: 100%;
+    position: fixed;
+}
+
+aside ul {
+    list-style: none;
+    margin-top: 90px;
+    margin-bottom: 50;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 1em;
+    margin-right: 70px;
+    margin-top: 35px;
+}
+aside ul li .logout{
+    margin-top: 150px;
+}
+.fa{
+    margin-right: 10px;
+    
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+}
+
+main {
+    margin-left: 220px;
+    padding: 1em;
+    flex-grow: 1;
+}
+section .grafico{
+
+justify-content: center;
+}
+header .btn-color{background-color: #DBB3B3;}
+.bg-color1{background-color: #CD294C;}
+.bg-color2{background-color: #BB426F;}
+.bg-color3{background-color: #52182E;}
+.container{
+    margin-top: 50px;
+}
+.col-margin{
+    margin: 5px;
+    text-align: center;
+    font-weight: 500;
+    
+    
+}
+h1{
+    text-decoration: none;
+}
+
+

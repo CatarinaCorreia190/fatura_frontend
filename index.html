@@ -1,144 +1,114 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto de Faturação</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS_/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="font-wesome/css/all.min.css">
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    
 </head>
-<body>
-    <header>
-       
-        <div class="#">Dashboard</div>
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-          <div class="input-group">
-              <input  type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar..."
-              aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                  <button class="btn btn-color" type="button">
-                      <i class="fas fa-search fa-sm"></i>
-                  </button>
-              </div>
-          <a href="#">
-              <img src="logo.png"  style="width:40px;" class="rounded-pill"> 
-          </a>
-          </div>
-      </form>
-        
-    </header>
-    <aside>
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="logo.png" style="width:40px;" > 
-            </a>
-          </div>
-        <ul>
-           <li><a href="index.html">Overview</a></li>
-            <li><a href="produtos.html"><i class="fa-solid fa-basket-shopping"></i>Produtos</a></li>
-            <li><a href="faturas.html"><i class="fa-solid fa-file-invoice"></i>Faturas</a></li>
-            <li><a href="Pagamentos.html"><i class="fa-solid fa-money-check"></i>Pagamentos</a></li>
-            <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>login out</li></p>
-        </ul>
-    </aside>
-    <main>
-        <section class="funcoes">
-            <div class="container ">
-            <div class="row  d-flex justify-content-center" >
-              <div class="col-sm-3 p-3 bg-color1 text-white col-margin " >Produtos: <div class="qtd">10</div> </div>
-              <div class="col-sm-3 p-3 bg-color2 text-white  col-margin">Clientes: <div class="qtd">20</div></div>
-              <div class="col-sm-3 p-3 bg-color3 text-white col-margin ">Facturas Emitidas:<div class="qtd">30</div> </div>
-            </div>
-          </div>
-        </section>
-        
-        <section class="graficos ">
-            <div style="width: 50%; float: left;margin-top: 125px;">
-              <canvas id="bar-chart"></canvas>
-            </div>
-            <div style="width: 50%; float: left;margin-top: 125px;">
-              <canvas id="pie-chart"></canvas>
-            </div>
-            <script>
-              // Dados para o gráfico de barras
-              const barData = {
-                labels: ['Produtos', 'Clientes', 'Facturas Emitidas'],
-                datasets: [{
-                  label: 'Dados de Exemplo',
-                  data: [10, 20, 30],
-                  backgroundColor: [
-                    'rgb(205, 41, 76)',
-                    'rgb(187, 66, 111)',
-                    'rgb(82, 24, 46)'
-                  ],
-                  borderColor: [
-                    'rgb(205, 41, 76, 1)',
-                    'rgb(187, 66, 111, 1)',
-                    'rgb(82, 24, 46, 1)'
-                  ],
-                  borderWidth: 1
-                }]
-              };
 
-              // Dados para o gráfico de pizza
-              const pieData = {
-                labels: ['Produtos', 'Clientes', 'Facturas Emitidas'],
-                datasets: [{
-                  label: 'Dados de Exemplo',
-                  data: [10, 20, 30],
-                  backgroundColor: [
-                    'rgb(205, 41, 76)',
-                    'rgb(187, 66, 111)',
-                    'rgb(82, 24, 46)'
-                  ],
-                  borderColor: [
-                    'rgb(205, 41, 76, 1)',
-                    'rgb(187, 66, 111, 1)',
-                    'rgb(82, 24, 46, 1)'
-                  ],
-                  borderWidth: 1
-                }]
-              };
+<body class="sign-in-js">
+    <div class="container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Welcome back!</h2>
+                <p class="description description-primary">to keep connected with us</p>
+                <p class="description description-primary">please login with your personal info</p>
+                <button id="signin" class="btn btn-primary">Sign in</button>
+            </div><!-- first-column-->
 
-              // Configurações do gráfico de barras
-              const barOptions = {
-                scales: {
-                  y: {
-                    beginAtZero: true
-                  }
-                }
-              };
+            <div class="second-column">
+                <h2 class="title title-second">Create account</h2>
+                <div class="social-media">
+                    <ul class="list-social-media">
+                        <a href="#" class="link-social-media">
+                            <li class="item-social-media">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                        <a href="#" class="link-social-media">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus-g" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                        <a href="#" class="link-social-media">
+                            <li class="item-social-media">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <p class="description description-second">or use your email for registration:</p>
+                <form class="formulario">
+                    <label class="label-input">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" placeholder="Name">
+                    </label>
+                    <label class="label-input">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email">
+                    </label>
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="*******">
+                    </label>
+                    <button class="btn btn-second">Sign up</button>
+                </form>
 
-              // Configurações do gráfico de pizza
-              const pieOptions = {
-                responsive: true,
-                maintainAspectRatio: false
-              };
+            </div><!--second-column-->
+        </div><!-- first-content-->
 
-              // Cria o gráfico de barras
-              const barChart = new Chart(document.getElementById('bar-chart').getContext('2d'), {
-                type: 'bar',
-                data: barData,
-                options: barOptions
-              });
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Hello, friend!</h2>
+                <p class="description description-primary">Enter your personal details</p>
+                <p class="description description-primary">and start journey with us </p>
+                <button id="signup" class="btn btn-primary">Sign up</button>
+            </div><!-- first-column-->
 
-              // Cria o gráfico de pizza
-              const pieChart = new Chart(document.getElementById('pie-chart').getContext('2d'), {
-                type: 'pie',
-                data: pieData,
-                options: pieOptions
-              });
-            </script>
-        </section>
+            <div class="second-column">
+                <h2 class="title title-second">Sign in to developer</h2>
+                <div class="social-media">
+                    <ul class="list-social-media">
+                        <a href="#" class="link-social-media">
+                            <li class="item-social-media">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                        <a href="#" class="link-social-media">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus-g" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                        <a href="#" class="link-social-media">
+                            <li class="item-social-media">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div><!-- Socia Media-->
+                <p class="description description-second">or use your email account:</p>
+                <form class="formulario">
+                    <label class="label-input">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email">
+                    </label>
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="*******">
+                    </label>
+                    <a class="password" href="#">forgot your password?</a>
+                    <button class="btn btn-second">Sign in</button>
+                </form>
 
-          
-    </main>
-    <script src="js/bootstrap.bundle.min.js"></script>
-   
+            </div><!--second-column-->
+        </div>
+    </div><!-- second-content-->
+    </div>
+    <script src="JS_/app.js"></script>
 </body>
+
 </html>

@@ -5,12 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Factura</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+<style>
+  body{
+    text-decoration: none;
+  }
+</style>
 
 <body onload="loadData()">
   <header>
@@ -32,19 +37,15 @@
     </form>
   </header>
   <aside>
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" style="width:40px;">
-      </a>
-    </div>
     <ul>
-      <li><a href="index.html">Overview</a></li>
-      <li><a href="clientes.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
-      <li><a href="produtos.html"><i class="fa-solid fa-basket-shopping"></i>Produtos</a></li>
-      <li><a href="faturas.html"><i class="fa-solid fa-file-invoice"></i>Faturas</a></li>
-      <li><a href="Pagamentos.html"><i class="fa-solid fa-money-check"></i>Pagamentos</a></li>
-      <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>login out</li>
-      </p>
+      <li><a href="dashboard.html"><i class="fa fa-th-large" aria-hidden="true"></i>Overview</a></li>
+      <li><a href="clientes.html"><i class="fa fa-users"></i>Clientes</a></li>
+      <li><a href="produtos.html"><i class="fa fa-shopping-basket "></i>Produtos</a></li>
+      <li><a href="faturas.html"><i class="fa fa-file-invoice  "></i>Faturas</a></li>
+      <li><a href="Pagamentos.html"><i class="fa fa-money-check "></i>Pagamentos</a></li>
+      <li><a href="AddUser.html"><i class="fa fa-users"></i>Adicionar User</a></li>
+      <li><a href="index.html"><onload="loadData()"i class="fa fa-sign-out logout" aria-hidden="true"></i>login out</a></li>
+    </ul>
     </ul>
   </aside>
   <main>
@@ -60,7 +61,7 @@
 
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title " style="color: #52182E;">Adicionar Fatura</h4>
+            <h4 class="modal-title " style="color: #52182E;">Criar Fatura</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
 
@@ -79,6 +80,8 @@
                           <th>Nome do Item</th>
                           <th>Quantidade</th>
                           <th>Preço</th>
+                          <th>Total (IVA)</th>
+                          <th></th>
                         </tr>
                       </thead>
                       <tbody id="faturaItemsTableBody">
@@ -94,10 +97,12 @@
                       <div class="col-md-4">
                         <input type="number" id="quantidade" class="form-control" placeholder="Quantidade" required>
                       </div>
-                      <div class="col-md-4">
-                        <button type="button" class="btn btn-color"
-                          style="width: 150px; background-color:#CD294C; color: #fff;" onclick="addItem()">Adicionar
-                          Item</button>
+                      <div class="row" style="margin-top: 10px;">  
+                        <div class="cont-btn">
+                          <button type="button" class="btn btn-color"
+                          style=" background-color:#CD294C; color: #fff;" onclick="addItem()">
+                          Adiconar Item</button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -108,6 +113,8 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
+              <button type="button" class="btn btn-color" style="background-color: #2983cd;color: #fff;">
+                <a href="ImprimeFatura/ImpimeFatura.html" style="text-decoration: none; color: #fff;">Imprimir Fatura Proforma</a> </button>
               <button type="button" class="btn btn-bg-color" data-bs-dismiss="modal"
                 style="background-color: #52182E; color: #fff;" onclick="addInvoice()">Adicionar</button>
             </div>
@@ -123,7 +130,7 @@
           <th>Data Emissão</th>
           <th>Cliente</th>
           <th>Estado</th>
-          <th>Total</th>
+          <th>Total (IVA)</th>
           <th>Criado Em</th>
           <th>Atualizado Em</th>
           <th></th>
@@ -158,21 +165,19 @@
         console.log(fatura.data);
         tableBody.innerHTML += `<tr>
                   <td>#</td>
-                  <td>${fatura.data._idFatura}</td>
-                  <td>${fatura.data._dataEmissao}</td>
-                  <td>****************</td>
-                  <td>${fatura.data._estado}</td>
-                  <td>********</td>
-                  <td>${fatura.data._criadoEm}</td>
-                  <td>${fatura.data._actualizadoEm}</td>
+                  <td>${fatura.data.numeroFatura}</td>
+                  <td>${fatura.data.dataEmissao}</td>
+                  <td>${fatura.data.nomeCliente}</td>
+                  <td>${fatura.data.estado}</td>
+                  <td>${fatura.data.total} AOA</td>
+                  <td>${fatura.data.criadoEm}</td>
+                  <td>${fatura.data.actualizadoEm}</td>
                   <td class="d-flex justify-content-center ">
-              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-edit"></i>
-              </a>
+              <a href="#" class="btn btn-warning btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fa fa-ban" aria-hidden="true"></i></a>
   
-              <a href="#" class="btn btn-primary btn-circle btn-sm" data-bs-toggle="modal" data-bs-target="#myModalQty">
-                  <i class="fas fa-plus"></i>
-              </a>
+              <a href="#" class="btn btn-primary btn-circle btn-sm" onclick="generateInvoicePDF('${fatura.data.idFatura}')">
+                  <i class="fa fa-print" aria-hidden="true"></i></a>
           </td>
               </tr>`
       } catch (error) {
@@ -182,10 +187,11 @@
 
   </script>
 
-  <script defer>
+  <script>
     async function loadData() {
       inputClientes.innerHTML = '';
       try {
+        await loadInvoicesData();
         const clientes = await axios.get('https://factura-h7s5.onrender.com/api/cliente');
         clientes.data.forEach(element => {
           inputClientes.innerHTML += `<option value="${element._idCliente}">${element._nome}</option>`
@@ -214,17 +220,154 @@
             <td>${nome}</td>
             <td>${inputQuantidade.value}</td>
             <td>${preco}</td>
+            <td>${(preco * parseInt(inputQuantidade.value) * 0.07) + (preco * parseInt(inputQuantidade.value))}</td>
             <td class="d-flex justify-content-center ">
-                              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
-                                  <i class="fas fa-edit"></i>
-                              </a>
-                  
-                              <a href="#" class="btn btn-danger btn-circle btn-sm">
+                              <a href="#" class="btn btn-danger btn-circle btn-sm" onclick="removeItem('${idProduto}')">
                                   <i class="fas fa-trash"></i>
                               </a>
                           </td>
         </tr>`
       inputQuantidade.value = '';
+    }
+  </script>
+
+  <script>
+    function removeItem(id) {
+      const index = produtos.findIndex((item) => item.idProduto === id);
+      if (index !== -1) {
+        produtos.splice(index, 1);
+      }
+      tableItemsBody.innerHTML = '';
+      produtos.forEach((item) => {
+        tableItemsBody.innerHTML += `<tr>
+              <td>${item.nome}</td>
+              <td>${item.quantidade}</td>
+              <td>${item.preco}</td>
+              <td>${(item.preco * parseInt(item.quantidade) * 0.07) + (item.preco * parseInt(item.quantidade))}</td>
+              <td class="d-flex justify-content-center ">
+                              <a href="#" class="btn btn-danger btn-circle btn-sm" onclick="removeItem(${item.idProduto})">
+                                  <i class="fas fa-trash"></i>
+                              </a>
+                          </td>
+          </tr>`
+      });
+    }
+  </script>
+  <script defer>
+    async function loadInvoicesData() {
+        tableBody.innerHTML = "";
+        try {
+          const faturas = await axios.get('https://factura-h7s5.onrender.com/api/fatura');
+          faturas.data.forEach(element => {
+            tableBody.innerHTML += `<tr>
+                  <td>#</td>
+                  <td>${element.numeroFatura}</td>
+                  <td>${element.dataEmissao}</td>
+                  <td>${element.nomeCliente}</td>
+                  <td>${element.estado}</td>
+                  <td>${element.total} AOA</td>
+                  <td>${element.criadoEm}</td>
+                  <td>${element.actualizadoEm}</td>
+                  <td class="d-flex justify-content-center ">
+              <a href="#" class="btn btn-warning btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fa fa-ban" aria-hidden="true"></i></a>
+  
+              <a href="#" class="btn btn-primary btn-circle btn-sm" onclick="generateInvoicePDF('${element.idFatura}')">
+                  <i class="fa fa-print" aria-hidden="true"></i></a>
+          </td>
+              </tr>`
+          });
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    async function generateInvoicePDF(id) {
+
+      try {
+      const fatura = await axios.get('https://factura-h7s5.onrender.com/api/fatura/' + id);
+      console.log(fatura.data)
+      const page = `<!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatura</title>  <style>
+      /* Add your CSS styles here para formatação */
+      body {
+        font-family: sans-serif;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table th, table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fatura</h1>
+    <div class="informacao-fatura">  <p>
+        <b>Nome da Sua Empresa</b><br>
+        Endereço Linha 1<br>
+        Endereço Linha 2<br>
+        Email: seuemail@empresa.com<br>
+      </p>
+      <p>
+        <b>Número da Fatura:</b> <span id="invoice-number">${fatura.data.numeroFatura}</span><br>
+        <b>Data da Fatura:</b> <span id="invoice-date">${fatura.data.criadoEm}</span>
+      </p>
+    </div>
+    <div class="informacao-cliente">  <p>
+        <b>Cobrar para:</b><br>
+        <span id="client-name">${fatura.data.nomeCliente}</span><br>
+        <span id="client-address"></span><br>
+      </p>
+    </div>
+    <table class="itens-fatura">  <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${fatura.data.items.map(item => `<tr>
+              <td>${item.nomeProduto}</td>
+              <td>${item.quantidade}</td>
+              <td>${item.precoUnitario}</td>
+              <td>${item.total}</td>
+          </tr>`
+        )
+        }
+        </tbody>
+    </table>
+    <div class="total-fatura">  <p>
+        <b>Total:</b> AOA <span id="total">${fatura.data.total}</span><br>
+      </p>
+    </div>
+    <p>Obrigado pelo seu negócio!</p>
+  </body></html>
+  `;
+      var opt = {
+        margin: 1,
+        filename: fatura.data.numeroFatura,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      // Choose the element that our invoice is rendered in.
+      html2pdf().set(opt).from(page).save();
+
+      } catch (error) {
+        console.log(error)
+      }
     }
   </script>
 </body>

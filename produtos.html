@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamentos</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -29,19 +29,15 @@
 
     </header>
     <aside>
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="logo.png" style="width:40px;" > 
-            </a>
-          </div>
-         <ul>
-           <li><a href="index.html">Overview</a></li>
-            <li><a href="clientes.html"><i class="fa-solid fa-users"></i>Clientes</a></li>
-            <li><a href="produtos.html"><i class="fa-solid fa-basket-shopping"></i>Produtos</a></li>
-            <li><a href="faturas.html"><i class="fa-solid fa-file-invoice"></i>Faturas</a></li>
-            <li><a href="Pagamentos.html"><i class="fa-solid fa-money-check"></i>Pagamentos</a></li>
-            <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>login out</li></p>
-        </ul>
+      <ul>
+        <li><a href="dashboard.html"><i class="fa fa-th-large" aria-hidden="true"></i>Overview</a></li>
+        <li><a href="clientes.html"><i class="fa fa-users"></i>Clientes</a></li>
+        <li><a href="produtos.html"><i class="fa fa-shopping-basket "></i>Produtos</a></li>
+        <li><a href="faturas.html"><i class="fa fa-file-invoice  "></i>Faturas</a></li>
+        <li><a href="Pagamentos.html"><i class="fa fa-money-check "></i>Pagamentos</a></li>
+        <li><a href="AddUser.html"><i class="fa fa-users"></i>Adicionar User</a></li>
+        <li><a href="index.html">login out<i class="fa fa-sign-out logout" aria-hidden="true"></i></a></li>
+      </ul>
     </aside>
     <main>
       
@@ -93,6 +89,55 @@
         </div>
       </div>
 
+      <div class="modal fade" id="myModalEdit">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" style="color: #52182E;">Editar Produto</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="editProdutoForm">
+      
+              <!-- Modal body -->
+              <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
+                <div class="form-group" style="display: none;">
+                  <label for="nif">ID</label>
+                  <input type="text" class="form-control" id="editID" placeholder="ID do Produto" required>
+                </div>
+                <div class="form-group">
+                  <label for="productName">Nome</label>
+                  <input type="text" class="form-control" id="editNome" placeholder="Nome do Produto" required>
+                </div>
+                <div class="form-group">
+                  <label for="productDescription">Descrição</label>
+                  <textarea class="form-control" id="editDescricao" rows="3" placeholder="Descrição do Produto"
+                    required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="productPrice">Preço</label>
+                  <input type="number" class="form-control" id="editPreco" placeholder="Preço do Produto" required>
+                </div>
+                <div class="form-group">
+                  <label for="productRegime">Regime</label>
+                  <select class="form-control" id="editRegime" required>
+                    <option value="Regime Geral">Regime Geral</option>
+                    <option value="Exento">Exento</option>
+                  </select>
+                </div>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-bg-color" data-bs-dismiss="modal"
+                  style="background-color: #52182E; color: #fff;">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <div class="modal fade" id="myModalQty">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -111,7 +156,7 @@
                   <input type="text" class="form-control" id="productId" required readonly>
                 </div>
                 <div class="form-group">
-                  <label for="qty">Preço</label>
+                  <label for="qty">Quantidade</label>
                   <input type="number" class="form-control" id="qty" placeholder="Quantidade" required>
                 </div>
               </div>
@@ -151,11 +196,17 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script defer>
       const formDOM = document.querySelector('#produtoForm')
+      const formDOMEdit = document.querySelector('#editProdutoForm')
       const formDOMQty = document.querySelector('#produtoFormQty')
       const inputNome = document.querySelector('#nome')
       const inputDescricao = document.querySelector('#descricao')
       const inputPreco = document.querySelector('#preco')
       const inputRegime = document.querySelector('#regime')
+      const inputProductIdEdit = document.querySelector('#editID')
+      const inputNomeEdit = document.querySelector('#editNome')
+      const inputDescricaoEdit = document.querySelector('#editDescricao')
+      const inputPrecoEdit = document.querySelector('#editPreco')
+      const inputRegimeEdit = document.querySelector('#editRegime')
       const inputProductId = document.querySelector('#productId')
       const inputQty = document.querySelector('#qty')
       const table = document.getElementById("productTable");
@@ -182,10 +233,11 @@
                   <td>${produto.data.idProduto._criadoEm}</td>
                   <td>${produto.data.idProduto._actualizadoEm}</td>
                   <td class="d-flex justify-content-center ">
-              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalEdit"
+              onclick="loadEditData('${produto.data.idProduto._idProduto}', '${nome}', '${descricao}', '${preco}', '${regime}')"
+              >
                   <i class="fas fa-edit"></i>
               </a>
-  
               <a href="#" class="btn btn-primary btn-circle btn-sm" data-bs-toggle="modal" data-bs-target="#myModalQty" onclick="setProductId('${produto.data.idProduto._idProduto}')">
                   <i class="fas fa-plus"></i>
               </a>
@@ -215,6 +267,39 @@
           }
         })
     </script>
+
+    <script>
+      function loadEditData(id, nome, descricao, preco, regime) {
+        inputProductIdEdit.value = id
+        inputNomeEdit.value = nome
+        inputDescricaoEdit.value = descricao
+        inputPrecoEdit.value = preco
+        inputRegimeEdit.value = regime
+      }
+    </script>
+
+    <script defer>
+      formDOMEdit.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = inputProductIdEdit.value
+        const nome = inputNomeEdit.value
+        const descricao = inputDescricaoEdit.value
+        const preco = inputPrecoEdit.value
+        const regime = inputRegimeEdit.value
+
+        try {
+          const cliente = await axios.patch(`https://factura-h7s5.onrender.com/api/produto/atualizar/${id}`, { nome, descricao, preco, regime });
+          inputProductIdEdit.value = "";
+          inputNomeEdit.value = "";
+          inputDescricaoEdit.value = "";
+          inputPrecoEdit.value = "";
+          inputRegimeEdit.value = "";
+          await loadData();
+        } catch (error) {
+          console.log(error)
+        }
+      })
+    </script>
     
     <script defer>
       async function loadData() {
@@ -232,9 +317,12 @@
                     <td>${element._criadoEm}</td>
                     <td>${element._actualizadoEm}</td>
                     <td class="d-flex justify-content-center ">
-              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-toggle="modal" data-target="#logoutModal">
+              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalEdit"
+              onclick="loadEditData('${element._idProduto}', '${element._nome}', '${element._descricao}', '${element._preco}', '${element._regime}')"
+              >
                   <i class="fas fa-edit"></i>
               </a>
+              
               <span> </span>
   
               <a href="#" class="btn btn-primary btn-circle btn-sm" data-bs-toggle="modal" data-bs-target="#myModalQty" onclick="setProductId('${element._idProduto}')">
