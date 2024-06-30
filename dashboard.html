@@ -12,7 +12,7 @@
 
     
 </head>
-<body>
+<body onload="loadChart()">
     <header>
        
         <div class="#">Dashboard</div>
@@ -49,7 +49,7 @@
             <div class="row  d-flex justify-content-center" >
               <div class="col-sm-3 p-3 bg-color1 text-white col-margin " >Produtos: <div class="qtd">10</div> </div>
               <div class="col-sm-3 p-3 bg-color2 text-white  col-margin">Clientes: <div class="qtd">20</div></div>
-              <div class="col-sm-3 p-3 bg-color3 text-white col-margin ">Facturas Emitidas:<div class="qtd">30</div> </div>
+              <div class="col-sm-3 p-3 bg-color3 text-white col-margin ">Facturas Emitidas:<div class="invoiceQtd"></div> </div>
             </div>
           </div>
         </section>
@@ -61,75 +61,82 @@
             <div style="width: 50%; float: left;margin-top: 125px;">
               <canvas id="pie-chart"></canvas>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
             <script>
+              const invoiceQty = document.querySelector('.invoiceQtd');
               // Dados para o gráfico de barras
-              const barData = {
-                labels: ['Produtos', 'Clientes', 'Facturas Emitidas'],
-                datasets: [{
-                  label: 'Dados de Exemplo',
-                  data: [10, 20, 30],
-                  backgroundColor: [
-                    'rgb(205, 41, 76)',
-                    'rgb(187, 66, 111)',
-                    'rgb(82, 24, 46)'
-                  ],
-                  borderColor: [
-                    'rgb(205, 41, 76, 1)',
-                    'rgb(187, 66, 111, 1)',
-                    'rgb(82, 24, 46, 1)'
-                  ],
-                  borderWidth: 1
-                }]
-              };
+              async function loadChart() {
+                const faturas = await axios.get('https://factura-h7s5.onrender.com/api/fatura');
+                numeroFaturas = faturas.data.length;
+                invoiceQty.innerHTML = numeroFaturas;
+                const barData = {
+                  labels: ['Produtos', 'Clientes', 'Facturas Emitidas'],
+                  datasets: [{
+                    label: 'Dados de Exemplo',
+                    data: [10, 20, numeroFaturas],
+                    backgroundColor: [
+                      'rgb(205, 41, 76)',
+                      'rgb(187, 66, 111)',
+                      'rgb(82, 24, 46)'
+                    ],
+                    borderColor: [
+                      'rgb(205, 41, 76, 1)',
+                      'rgb(187, 66, 111, 1)',
+                      'rgb(82, 24, 46, 1)'
+                    ],
+                    borderWidth: 1
+                  }]
+                };
 
-              // Dados para o gráfico de pizza
-              const pieData = {
-                labels: ['Produtos', 'Clientes', 'Facturas Emitidas'],
-                datasets: [{
-                  label: 'Dados de Exemplo',
-                  data: [10, 20, 30],
-                  backgroundColor: [
-                    'rgb(205, 41, 76)',
-                    'rgb(187, 66, 111)',
-                    'rgb(82, 24, 46)'
-                  ],
-                  borderColor: [
-                    'rgb(205, 41, 76, 1)',
-                    'rgb(187, 66, 111, 1)',
-                    'rgb(82, 24, 46, 1)'
-                  ],
-                  borderWidth: 1
-                }]
-              };
+                // Dados para o gráfico de pizza
+                const pieData = {
+                  labels: ['Produtos', 'Clientes', 'Facturas Emitidas'],
+                  datasets: [{
+                    label: 'Dados de Exemplo',
+                    data: [10, 20, 30],
+                    backgroundColor: [
+                      'rgb(205, 41, 76)',
+                      'rgb(187, 66, 111)',
+                      'rgb(82, 24, 46)'
+                    ],
+                    borderColor: [
+                      'rgb(205, 41, 76, 1)',
+                      'rgb(187, 66, 111, 1)',
+                      'rgb(82, 24, 46, 1)'
+                    ],
+                    borderWidth: 1
+                  }]
+                };
 
-              // Configurações do gráfico de barras
-              const barOptions = {
-                scales: {
-                  y: {
-                    beginAtZero: true
+                // Configurações do gráfico de barras
+                const barOptions = {
+                  scales: {
+                    y: {
+                      beginAtZero: true
+                    }
                   }
-                }
-              };
+                };
 
-              // Configurações do gráfico de pizza
-              const pieOptions = {
-                responsive: true,
-                maintainAspectRatio: false
-              };
+                // Configurações do gráfico de pizza
+                const pieOptions = {
+                  responsive: true,
+                  maintainAspectRatio: false
+                };
 
-              // Cria o gráfico de barras
-              const barChart = new Chart(document.getElementById('bar-chart').getContext('2d'), {
-                type: 'bar',
-                data: barData,
-                options: barOptions
-              });
+                // Cria o gráfico de barras
+                const barChart = new Chart(document.getElementById('bar-chart').getContext('2d'), {
+                  type: 'bar',
+                  data: barData,
+                  options: barOptions
+                });
 
-              // Cria o gráfico de pizza
-              const pieChart = new Chart(document.getElementById('pie-chart').getContext('2d'), {
-                type: 'pie',
-                data: pieData,
-                options: pieOptions
-              });
+                // Cria o gráfico de pizza
+                const pieChart = new Chart(document.getElementById('pie-chart').getContext('2d'), {
+                  type: 'pie',
+                  data: pieData,
+                  options: pieOptions
+                });
+              }
             </script>
         </section>
 
