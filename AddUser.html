@@ -99,6 +99,39 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="myModalPassword">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+        
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: #52182E;">Alterar Senha</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form id="passwordForm">
+        
+                        <!-- Modal body -->
+                        <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
+                            <div class="form-group" style="display: none;">
+                                <label for="userIdEdit">ID User</label>
+                                <input type="text" class="form-control" id="userIdEdit" required readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordEdit">Password</label>
+                                <input type="password" class="form-control" id="passwordEdit" placeholder="Password" required>
+                            </div>
+                        </div>
+        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-bg-color" data-bs-dismiss="modal"
+                                style="background-color: #52182E; color: #fff;">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <table class="table table-bordered table-hover" id="userTable">
             <thead>
                 <tr>
@@ -124,11 +157,14 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script defer>
     const formDOM = document.querySelector('#userForm')
+    const formPasswordDOM = document.querySelector('#passwordForm')
     const inputNome = document.querySelector('#nome')
     const inputSobrenome = document.querySelector('#sobrenome')
     const inputEmail = document.querySelector('#email')
     const inputPassword = document.querySelector('#password')
     const inputTipo = document.querySelector('#tipo')
+    const inputUserIdEdit = document.querySelector('#userIdEdit')
+    const inputPasswordEdit = document.querySelector('#passwordEdit')
     const table = document.getElementById("userTable");
     const tableBody = document.getElementById("userTableBody");
 
@@ -152,7 +188,7 @@
               <td>${user.data.criadoEm}</td>
               <td>${user.data.actualizadoEm}</td>
               <td class="d-flex justify-content-center ">
-                        <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalUser">
+                        <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalPassword" onclick="loadEditData('${element._idUsuario}')">
                   <i class="fas fa-edit"></i>
               </a>
           </td>
@@ -182,7 +218,7 @@
                 <td>${element._criadoEm}</td>
                 <td>${element._actualizadoEm}</td>
                 <td class="d-flex justify-content-center ">
-              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalUser">
+              <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalPassword" onclick="loadEditData('${element._idUsuario}')">
                   <i class="fas fa-edit"></i>
               </a>
           </td>
@@ -192,6 +228,27 @@
             console.log(error)
         }
     }
+
+    function loadEditData(id) {
+        inputUserIdEdit.value = id;
+    }
+</script>
+
+<script defer>
+    formPasswordDOM.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = inputUserIdEdit.value
+        const password = inputPasswordEdit.value
+
+        try {
+            await axios.patch(`https://factura-h7s5.onrender.com/api/usuario/${id}`, { password });
+            inputUserIdEdit.value = "";
+            inputPasswordEdit.value = "";
+            await loadData();
+        } catch (error) {
+            console.log(error)
+        }
+    })
 </script>
 
 </html>
