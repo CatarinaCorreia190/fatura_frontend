@@ -61,16 +61,16 @@
                     </div>
 
                     <!-- Modal body -->
-                    <form id="clientForm">
+                    <form id="userForm">
                         <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
 
                             <div class="form-group">
-                                <label for="nif">NIF</label>
-                                <input type="text" class="form-control" id="nif" placeholder="NIF do Cliente" required>
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Nome" required>
                             </div>
                             <div class="form-group">
-                                <label for="nome">Nome</label>
-                                <input type="text" class="form-control" id="nome" placeholder="Nome do Cliente"
+                                <label for="sobrenome">Sobrenome</label>
+                                <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome"
                                     required>
                             </div>
                             <div class="form-group">
@@ -79,9 +79,15 @@
                                     required>
                             </div>
                             <div class="form-group">
-                                <label for="endereco">Endereço</label>
-                                <textarea class="form-control" id="endereco" rows="3" placeholder="Endereço do Cliente"
-                                    required></textarea>
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo">Tipo Usuario</label>
+                                <select id="tipo" class="form-control" required>
+                                    <option value="Admin">Admin</option>
+                                    <option value="User">User</option>
+                                </select>
                             </div>
                         </div>
                         <!-- Modal footer -->
@@ -97,10 +103,10 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>NIF</th>
                     <th>Nome</th>
+                    <th>Sobrenome</th>
                     <th>Email</th>
-                    <th>Endereço</th>
+                    <th>Tipo de Usuário</th>
                     <th>Criado em</th>
                     <th>Atualizado em</th>
                     <th>Acões</th>
@@ -117,86 +123,45 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script defer>
-    const formDOM = document.querySelector('#clientForm')
-    const inputNif = document.querySelector('#nif')
+    const formDOM = document.querySelector('#userForm')
     const inputNome = document.querySelector('#nome')
+    const inputSobrenome = document.querySelector('#sobrenome')
     const inputEmail = document.querySelector('#email')
-    const inputEndereco = document.querySelector('#endereco')
+    const inputPassword = document.querySelector('#password')
+    const inputTipo = document.querySelector('#tipo')
     const table = document.getElementById("userTable");
     const tableBody = document.getElementById("userTableBody");
 
     formDOM.addEventListener('submit', async (e) => {
         e.preventDefault();
         const nome = inputNome.value
-        const nif = inputNif.value
+        const sobrenome = inputSobrenome.value
         const email = inputEmail.value
-        const endereco = inputEndereco.value
+        const password = inputPassword.value
+        const tipo = inputTipo.value
+        console.log(nome, sobrenome, email, password, tipo)
 
         try {
-            const user = await axios.post('https://factura-h7s5.onrender.com/api/cliente', { nome, nif, email, endereco });
-            const newRow = table.insertRow();
+            const user = await axios.post('https://factura-h7s5.onrender.com/api/usuario', { nome, sobrenome, email, password, tipo });
             tableBody.innerHTML += `<tr>
               <td>#</td>
-              <td>${nif}</td>
               <td>${nome}</td>
+              <td>${sobrenome}</td>
               <td>${email}</td>
-              <td>${endereco}</td>
-              <td>${user.data._criadoEm}</td>
-              <td>${user.data._actualizadoEm}</td>
+              <td>${tipo}</td>
+              <td>${user.data.criadoEm}</td>
+              <td>${user.data.actualizadoEm}</td>
               <td class="d-flex justify-content-center ">
-                        <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalUser"
-                            <i class="fas fa-edit" ></i>
-                        </a>
-                        <div class="modal fade" id="myModalUser">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                        <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" style="color: #52182E;">Adicionar Usuário</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-
-                                    <!-- Modal body -->
-                                    <form id="clientForm">
-                                        <div class="modal-body" style="color:#52182E; font-size: larger; font-weight: 500;">
-
-                                            <div class="form-group">
-                                                <label for="nif">NIF</label>
-                                                <input type="text" class="form-control" id="nif" placeholder="NIF do Usuario" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="nome">Nome</label>
-                                                <input type="text" class="form-control" id="nome" placeholder="Nome do Usuario" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="email">Email</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Email do Usuario" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="endereco">Endereço</label>
-                                                <textarea class="form-control" id="endereco" rows="3" placeholder="Endereço do Usuario"
-                                                required></textarea>
-                                            </div>
-                                        </div>
-                                        <!-- Modal footer -->
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-bg-color" data-bs-dismiss="modal"
-                                            style="background-color: #52182E; color: #fff;">Adicionar</button>
-                                        </div>
-                                    </form>
-                            </div>
-                            </div>
-                        </div>
-        
-                         <a href="#" class="btn btn-danger btn-circle btn-sm btn_delete">
-                             <i class="fas fa-trash  " ></i>
-                        </a>
+                        <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalUser">
+                  <i class="fas fa-edit"></i>
+              </a>
           </td>
           </tr>`
-            inputNome.value = "";
-            inputNif.value = "";
-            inputEmail.value = "";
-            inputEndereco.value = "";
+          inputEmail.value = '';
+          inputNome.value = '';
+          inputPassword.value = '';
+          inputSobrenome.value = '';
+          inputTipo.value = '';
         } catch (error) {
             console.log(error)
         }
@@ -206,23 +171,19 @@
 <script defer>
     async function loadData() {
         try {
-            const addUser = await axios.get('https://factura-h7s5.onrender.com/api/cliente');
-            addUser.data.forEach(element => {
+            const users = await axios.get('https://factura-h7s5.onrender.com/api/usuario');
+            users.data.forEach(element => {
                 tableBody.innerHTML += `<tr>
                 <td>#</td>
-                <td>${element._nif}</td>
                 <td>${element._nome}</td>
+                <td>${element._sobrenome}</td>
                 <td>${element._email}</td>
-                <td>${element._endereco}</td>
+                <td>${element._tipoUsuario}</td>
                 <td>${element._criadoEm}</td>
                 <td>${element._actualizadoEm}</td>
                 <td class="d-flex justify-content-center ">
               <a href="#" class="btn btn-info btn-circle btn-sm mr-3" data-bs-toggle="modal" data-bs-target="#myModalUser">
                   <i class="fas fa-edit"></i>
-              </a>
-  
-              <a href="#" class="btn btn-danger btn-circle btn-sm btn_delete">
-                  <i class="fas fa-trash "></i>
               </a>
           </td>
             </tr>`
@@ -231,18 +192,6 @@
             console.log(error)
         }
     }
-</script>
-<script>
-    var tabela = document.querySelector("#clientTableBody");
-
-    tabela.addEventListener("click", function () {
-        var elementoClicado = event.target;
-        if (elementoClicado.classList.contains("btn_delete")) {
-            var celula = elementoClicado.parentNode;
-            var linha = celula.parentNode;
-            linha.remove();
-        }
-    })
 </script>
 
 </html>

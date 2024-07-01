@@ -114,7 +114,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-color" style="background-color: #2983cd;color: #fff;">
-                <a href="ImprimeFatura/ImpimeFatura.html" style="text-decoration: none; color: #fff;">Imprimir Fatura Proforma</a> </button>
+                <a href="#" onclick="generateInvoiceProformaPDF()" style="text-decoration: none; color: #fff;">Imprimir Fatura Proforma</a> </button>
               <button type="button" class="btn btn-bg-color" data-bs-dismiss="modal"
                 style="background-color: #52182E; color: #fff;" onclick="addInvoice()">Adicionar</button>
             </div>
@@ -153,6 +153,7 @@
     const table = document.getElementById("faturaTable");
     const tableBody = document.getElementById("faturaTableBody");
     let produtos = [];
+    let proformaProducts = [];
 
     async function addInvoice() {
       console.log(produtos);
@@ -214,13 +215,21 @@
       produtos.push({
         idProduto: idProduto,
         quantidade: inputQuantidade.value,
-        imposto: 7
+        imposto: 14
+      });
+      proformaProducts.push({
+        idProduto: idProduto,
+        nome: nome,
+        quantidade: inputQuantidade.value,
+        imposto: 14,
+        preco: preco,
+        total: (preco * parseInt(inputQuantidade.value) * 0.14) + (preco * parseInt(inputQuantidade.value))
       })
       tableItemsBody.innerHTML += `<tr>
             <td>${nome}</td>
             <td>${inputQuantidade.value}</td>
             <td>${preco}</td>
-            <td>${(preco * parseInt(inputQuantidade.value) * 0.07) + (preco * parseInt(inputQuantidade.value))}</td>
+            <td>${(preco * parseInt(inputQuantidade.value) * 0.14) + (preco * parseInt(inputQuantidade.value))}</td>
             <td class="d-flex justify-content-center ">
                               <a href="#" class="btn btn-danger btn-circle btn-sm" onclick="removeItem('${idProduto}')">
                                   <i class="fas fa-trash"></i>
@@ -236,6 +245,7 @@
       const index = produtos.findIndex((item) => item.idProduto === id);
       if (index !== -1) {
         produtos.splice(index, 1);
+        proformaProducts.splice(index, 1);
       }
       tableItemsBody.innerHTML = '';
       produtos.forEach((item) => {
@@ -243,7 +253,7 @@
               <td>${item.nome}</td>
               <td>${item.quantidade}</td>
               <td>${item.preco}</td>
-              <td>${(item.preco * parseInt(item.quantidade) * 0.07) + (item.preco * parseInt(item.quantidade))}</td>
+              <td>${(item.preco * parseInt(item.quantidade) * 0.14) + (item.preco * parseInt(item.quantidade))}</td>
               <td class="d-flex justify-content-center ">
                               <a href="#" class="btn btn-danger btn-circle btn-sm" onclick="removeItem(${item.idProduto})">
                                   <i class="fas fa-trash"></i>
@@ -364,6 +374,107 @@
       };
       // Choose the element that our invoice is rendered in.
       html2pdf().set(opt).from(page).save();
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  </script>
+
+  <script>
+    async function generateInvoiceProformaPDF() {
+      const selectedIndex = inputClientes.selectedIndex;
+      const selectedOption = inputClientes.options[selectedIndex];
+      const totalPrice = proformaProducts.reduce((sum, item) => sum + item.total, 0)
+      const today = new Date();
+      let dd = today.getDate();
+      let mm = today.getMonth() + 1; // Months start at 0!
+      const yyyy = today.getFullYear();
+
+      if (dd < 10) {
+        dd = '0' + dd;
+      }
+
+      if (mm < 10) {
+        mm = '0' + mm;
+      }
+
+      const formattedDate = dd + '/' + mm + '/' + yyyy;
+      try {
+        const page = `<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Fatura</title>  <style>
+        /* Add your CSS styles here para formatação */
+        body {
+          font-family: sans-serif;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        table th, table td {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Fatura - Proforma</h1>
+      <div class="informacao-fatura">  <p>
+          <b>Nome da Sua Empresa</b><br>
+          Endereço Linha 1<br>
+          Endereço Linha 2<br>
+          Email: seuemail@empresa.com<br>
+        </p>
+        <p>
+          <b>Número da Fatura:</b> <span id="invoice-number">${yyyy + "-0000"}</span><br>
+          <b>Data da Fatura:</b> <span id="invoice-date">${formattedDate}</span>
+        </p>
+      </div>
+      <div class="informacao-cliente">  <p>
+          <b>Cobrar para:</b><br>
+          <span id="client-name">${selectedOption.text}</span><br>
+          <span id="client-address"></span><br>
+        </p>
+      </div>
+      <table class="itens-fatura">  <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${proformaProducts.map(item => `<tr>
+                <td>${item.nome}</td>
+                <td>${item.quantidade}</td>
+                <td>${item.preco}</td>
+                <td>${item.total}</td>
+            </tr>`
+        )
+          }
+          </tbody>
+      </table>
+      <div class="total-fatura">  <p>
+          <b>Total:</b> AOA <span id="total">${totalPrice}</span><br>
+        </p>
+      </div>
+      <p>Obrigado pelo seu negócio!</p>
+    </body></html>
+    `;
+        var opt = {
+          margin: 1,
+          filename: 'proforma' + yyyy + "-0000",
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        // Choose the element that our invoice is rendered in.
+        html2pdf().set(opt).from(page).save();
 
       } catch (error) {
         console.log(error)

@@ -47,8 +47,8 @@
         <section class="funcoes">
             <div class="container ">
             <div class="row  d-flex justify-content-center" >
-              <div class="col-sm-3 p-3 bg-color1 text-white col-margin " >Produtos: <div class="qtd">10</div> </div>
-              <div class="col-sm-3 p-3 bg-color2 text-white  col-margin">Clientes: <div class="qtd">20</div></div>
+              <div class="col-sm-3 p-3 bg-color1 text-white col-margin " >Produtos: <div class="productoQtd"></div> </div>
+              <div class="col-sm-3 p-3 bg-color2 text-white  col-margin">Clientes: <div class="clienteQtd"></div></div>
               <div class="col-sm-3 p-3 bg-color3 text-white col-margin ">Facturas Emitidas:<div class="invoiceQtd"></div> </div>
             </div>
           </div>
@@ -64,16 +64,24 @@
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
             <script>
               const invoiceQty = document.querySelector('.invoiceQtd');
+              const clienteQty = document.querySelector('.clienteQtd');
+              const productoQty = document.querySelector('.productoQtd');
               // Dados para o gráfico de barras
               async function loadChart() {
                 const faturas = await axios.get('https://factura-h7s5.onrender.com/api/fatura');
+                const clientes = await axios.get('https://factura-h7s5.onrender.com/api/cliente');
+                const produtos = await axios.get('https://factura-h7s5.onrender.com/api/produto');
                 numeroFaturas = faturas.data.length;
+                numeroClientes = clientes.data.length;
+                numeroProdutos = produtos.data.length;
                 invoiceQty.innerHTML = numeroFaturas;
+                clienteQty.innerHTML = numeroClientes;
+                productoQty.innerHTML = numeroProdutos;
                 const barData = {
                   labels: ['Produtos', 'Clientes', 'Facturas Emitidas'],
                   datasets: [{
                     label: 'Dados de Exemplo',
-                    data: [10, 20, numeroFaturas],
+                    data: [numeroProdutos, numeroClientes, numeroFaturas],
                     backgroundColor: [
                       'rgb(205, 41, 76)',
                       'rgb(187, 66, 111)',
@@ -93,7 +101,7 @@
                   labels: ['Produtos', 'Clientes', 'Facturas Emitidas'],
                   datasets: [{
                     label: 'Dados de Exemplo',
-                    data: [10, 20, 30],
+                    data: [numeroProdutos, numeroClientes, numeroFaturas],
                     backgroundColor: [
                       'rgb(205, 41, 76)',
                       'rgb(187, 66, 111)',
